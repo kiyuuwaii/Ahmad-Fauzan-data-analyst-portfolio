@@ -1,1 +1,39 @@
 @import "tailwindcss";
+
+@layer components {
+  .liquid-glass-card {
+    @apply bg-white/45 backdrop-blur-2xl backdrop-saturate-150 border border-white/70 shadow-[0_12px_32px_rgba(15,23,42,0.06),inset_0_1.5px_2px_rgba(255,255,255,0.8),inset_0_-1px_2px_rgba(0,0,0,0.03)] relative overflow-hidden;
+  }
+
+  .liquid-glass-card::before {
+    content: '';
+    @apply pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-70;
+  }
+
+  .liquid-btn-dark {
+    @apply bg-gradient-to-b from-slate-800 to-slate-950 border border-white/20 text-white shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.45),0_6px_16px_rgba(15,23,42,0.25)] relative overflow-hidden transition-all duration-200 hover:shadow-lg active:scale-95;
+  }
+
+  .liquid-btn-dark::before {
+    content: '';
+    @apply pointer-events-none absolute inset-x-2 top-0.5 h-[1px] bg-gradient-to-r from-transparent via-white/60 to-transparent rounded-full;
+  }
+
+  .liquid-btn-light {
+    @apply bg-white/45 backdrop-blur-2xl backdrop-saturate-150 border border-white/70 text-slate-800 shadow-[0_8px_24px_-4px_rgba(15,23,42,0.08),inset_0_1.5px_2px_rgba(255,255,255,0.9)] relative overflow-hidden transition-all duration-200 hover:bg-white/60 active:scale-95;
+  }
+
+  .liquid-btn-light::before {
+    content: '';
+    @apply pointer-events-none absolute inset-x-3 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-80;
+  }
+
+  .liquid-tag {
+    @apply bg-white/60 backdrop-blur-xl border border-white/80 text-slate-700 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9),0_2px_6px_rgba(15,23,42,0.03)] relative overflow-hidden;
+  }
+
+  .liquid-tag::before {
+    content: '';
+    @apply pointer-events-none absolute inset-x-2 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-90;
+  }
+}

@@ -80,79 +80,67 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* 2. MOBILE TRIGGER BUTTON */}
-      <nav className="flex sm:hidden fixed top-4 left-1/2 -translate-x-1/2 z-[60] w-full justify-center px-4 pointer-events-none">
+      {/* 2. MOBILE BOTTOM NAVIGATION */}
+      <nav className="flex sm:hidden fixed bottom-6 left-5 z-[60] pointer-events-none items-center gap-3">
+        {/* Trigger Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="pointer-events-auto relative flex items-center justify-between gap-6 px-4 py-2.5 w-auto min-w-[200px] bg-gradient-to-r from-sky-50/90 via-white/95 to-amber-50/85 backdrop-blur-2xl backdrop-saturate-150 border border-white/90 shadow-[0_8px_24px_-4px_rgba(56,189,248,0.22),0_4px_12px_rgba(251,191,36,0.12),inset_0_1.5px_2px_rgba(255,255,255,1)] rounded-full active:scale-95 transition-transform"
+          className="pointer-events-auto relative flex items-center justify-center w-12 h-12 rounded-full bg-white/70 backdrop-blur-2xl border border-white/90 shadow-[0_12px_28px_rgba(15,23,42,0.16),inset_0_1.5px_2px_rgba(255,255,255,1)] active:scale-95 transition-transform text-slate-800 z-50"
         >
-          <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-80" />
-          <span className="font-semibold text-slate-800 text-sm tracking-wide px-2">
-            {activeItem.name}
-          </span>
-          <div className="bg-white/80 shadow-sm border border-slate-200/50 p-1.5 rounded-full text-sky-900">
-            <motion.div animate={{ rotate: isMobileMenuOpen ? 90 : 0 }}>
-              {isMobileMenuOpen ? <X size={16} /> : <Menu size={16} />}
-            </motion.div>
-          </div>
+          <motion.div animate={{ rotate: isMobileMenuOpen ? 90 : 0 }}>
+            {isMobileMenuOpen ? (
+              <X size={20} />
+            ) : (
+              (() => {
+                const ActiveIcon = activeItem.icon;
+                return <ActiveIcon size={20} />;
+              })()
+            )}
+          </motion.div>
         </button>
-      </nav>
 
-      {/* 3. MOBILE FLOATING DRAWER */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="fixed inset-0 z-[55] bg-slate-900/10 backdrop-blur-sm sm:hidden"
-            />
-
-            {/* Menu Card */}
-            <motion.div
-              initial={{ opacity: 0, y: -20, scale: 0.95, x: "-50%" }}
-              animate={{ opacity: 1, y: 0, scale: 1, x: "-50%" }}
-              exit={{ opacity: 0, y: -10, scale: 0.95, x: "-50%" }}
-              transition={{ type: "spring", stiffness: 400, damping: 30 }}
-              className="fixed top-20 left-1/2 z-[60] w-[88vw] max-w-xs bg-gradient-to-b from-white/95 via-sky-50/60 to-amber-50/50 backdrop-blur-3xl backdrop-saturate-180 border border-white/95 shadow-[0_24px_50px_-10px_rgba(56,189,248,0.25),0_12px_24px_-6px_rgba(251,191,36,0.15),inset_0_2px_3px_rgba(255,255,255,1)] rounded-3xl p-3.5 flex flex-col gap-1.5 sm:hidden"
-            >
-              {navItems.map((item, idx) => {
-                const isActive = activeSection === item.id;
-                const Icon = item.icon;
-                return (
-                  <motion.button
-                    key={item.id}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -10 }}
-                    transition={{ delay: idx * 0.04 }}
-                    onClick={() => {
-                      setIsMobileMenuOpen(false);
-                      document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className={`flex items-center gap-3 px-5 py-4 w-full text-left transition-colors relative overflow-hidden rounded-2xl ${
-                      isActive
-                        ? "bg-gradient-to-r from-sky-100/90 via-white/95 to-amber-100/70 border border-sky-200/80 text-sky-950 font-bold shadow-sm"
-                        : "text-slate-600 hover:text-slate-900 hover:bg-white/60"
-                    }`}
-                  >
-                    <div className={`${isActive ? "bg-white text-sky-600 shadow-sm" : "text-slate-500"} p-1.5 rounded-xl`}>
+        {/* Unroll Menu Capsule */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <>
+              {/* Invisible Backdrop to catch clicks */}
+              <div 
+                className="fixed inset-0 z-40 pointer-events-auto"
+                onClick={() => setIsMobileMenuOpen(false)}
+              />
+              
+              <motion.div
+                initial={{ width: 0, opacity: 0, scale: 0.85, x: -10 }}
+                animate={{ width: 'auto', opacity: 1, scale: 1, x: 0 }}
+                exit={{ width: 0, opacity: 0, scale: 0.85, x: -10 }}
+                transition={{ type: 'spring', stiffness: 380, damping: 26 }}
+                className="pointer-events-auto relative flex items-center gap-1.5 p-1.5 rounded-full bg-white/70 backdrop-blur-2xl border border-white/90 shadow-[0_12px_28px_rgba(15,23,42,0.12),inset_0_1.5px_2px_rgba(255,255,255,1)] z-50 overflow-hidden"
+              >
+                {navItems.map((item) => {
+                  const isActive = activeSection === item.id;
+                  const Icon = item.icon;
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-colors ${
+                        isActive 
+                          ? "bg-slate-900 text-white shadow-sm" 
+                          : "text-slate-600 hover:text-slate-900 hover:bg-white/50"
+                      }`}
+                    >
                       <Icon size={18} />
-                    </div>
-                    <span className={`text-sm ${isActive ? "font-bold" : "font-semibold"}`}>{item.name}</span>
-                    {isActive && (
-                      <div className="absolute right-5 w-2 h-2 rounded-full bg-sky-500 shadow-[0_0_8px_rgba(14,165,233,0.6)]" />
-                    )}
-                  </motion.button>
-                );
-              })}
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+                    </button>
+                  );
+                })}
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
+      </nav>
     </>
   );
 }

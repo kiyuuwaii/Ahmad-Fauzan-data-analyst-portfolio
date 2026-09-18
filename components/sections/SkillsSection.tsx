@@ -24,14 +24,14 @@ export default function SkillsSection() {
           {skillCategories.map((group) => {
             const Icon = iconMap[group.category] || Database;
             return (
-              <div key={group.category} className="bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow p-6">
-                <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 mb-4">
+              <div key={group.category} className="liquid-glass-card rounded-2xl p-6 hover:shadow-lg transition-shadow duration-300">
+                <div className="w-10 h-10 rounded-xl bg-white/80 border border-slate-200/60 shadow-sm flex items-center justify-center text-slate-700 mb-4">
                   <Icon size={20} />
                 </div>
                 <h3 className="text-base font-bold text-slate-900 mb-4">{group.category}</h3>
                 <div className="flex flex-wrap gap-2">
                   {group.skills.map((skill) => (
-                    <span key={skill.name} className="bg-slate-50 text-slate-600 border border-slate-200/80 text-xs font-medium px-2.5 py-1 rounded-lg">
+                    <span key={skill.name} className="liquid-tag">
                       {skill.name}
                     </span>
                   ))}
