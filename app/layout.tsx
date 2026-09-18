@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import InteractiveBackground from "@/components/InteractiveBackground";
 import BackToTop from "@/components/BackToTop";
-import BackgroundGradient from "@/components/BackgroundGradient";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} bg-white text-slate-900 min-h-screen antialiased`}>
-        <BackgroundGradient />
+        <InteractiveBackground />
         <Navbar />
         {children}
         <BackToTop />

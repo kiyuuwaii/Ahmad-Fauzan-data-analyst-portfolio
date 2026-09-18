@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { MapPin, Calendar, FolderKanban, Mail, Briefcase, Code, Camera } from "lucide-react";
+import { LinkedinIcon, GithubIcon, InstagramIcon } from "@/components/icons/SocialIcons";
 import { profileData } from "@/data/profile";
 
 export default function HeroSection() {
@@ -89,10 +90,16 @@ export default function HeroSection() {
           {/* Follow me */}
             <div className="flex items-center gap-4 mt-8 pt-6 border-t border-slate-200">
               <span className="text-slate-500 text-sm font-medium">Follow me:</span>
-              <div className="flex gap-3">
-                <a href={profileData.socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-slate-400 hover:text-slate-900 transition-colors"><Briefcase size={20} /></a>
-                <a href={profileData.socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-slate-400 hover:text-slate-900 transition-colors"><Code size={20} /></a>
-                <a href={profileData.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-slate-400 hover:text-slate-900 transition-colors"><Camera size={20} /></a>
+              <div className="flex gap-4">
+                <a href={profileData.socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-slate-400 hover:text-slate-900 transition-colors">
+                  <LinkedinIcon className="w-5 h-5" />
+                </a>
+                <a href={profileData.socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-slate-400 hover:text-slate-900 transition-colors">
+                  <GithubIcon className="w-5 h-5" />
+                </a>
+                <a href={profileData.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-slate-400 hover:text-slate-900 transition-colors">
+                  <InstagramIcon className="w-5 h-5" />
+                </a>
               </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
-import { Mail, MapPin, Phone, ArrowRight, Briefcase, Code, Camera } from "lucide-react";
+import { Mail, MapPin, Phone, ArrowRight } from "lucide-react";
 import { profileData } from "@/data/profile";
+import { LinkedinIcon, GithubIcon, InstagramIcon } from "@/components/icons/SocialIcons";
 
 export default function ContactSection() {
   return (
@@ -55,13 +56,13 @@ export default function ContactSection() {
             <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-3">On The Web</p>
             <div className="flex gap-3 justify-start">
               <a href={profileData.socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-11 h-11 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-500 hover:text-slate-900 hover:border-slate-300 transition-all">
-                <Briefcase size={18} />
+                <LinkedinIcon className="w-5 h-5" />
               </a>
               <a href={profileData.socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="w-11 h-11 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-500 hover:text-slate-900 hover:border-slate-300 transition-all">
-                <Code size={18} />
+                <GithubIcon className="w-5 h-5" />
               </a>
               <a href={profileData.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-11 h-11 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-500 hover:text-slate-900 hover:border-slate-300 transition-all">
-                <Camera size={18} />
+                <InstagramIcon className="w-5 h-5" />
               </a>
             </div>
           </div>
