@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Briefcase, GraduationCap, Trophy, MapPin, Calendar } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { workExperiences, educationData, certifications } from "@/data/experience";
@@ -8,7 +9,7 @@ import { workExperiences, educationData, certifications } from "@/data/experienc
 const tabs = [
   { id: "work", label: "Work Experience", icon: Briefcase },
   { id: "education", label: "Education", icon: GraduationCap },
-  { id: "achievements", label: "Achievements", icon: Trophy },
+  { id: "certifications", label: "Certifications", icon: Trophy },
 ];
 
 export default function ExperienceSection() {
@@ -54,10 +55,31 @@ export default function ExperienceSection() {
           workExperiences.map((item, index) => (
             <ScrollReveal key={item.id} delay={index * 0.1}>
               <div className="bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow p-6 sm:p-8">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
-                  <div>
-                    <h3 className="text-lg font-bold text-slate-900">{item.role}</h3>
-                    <p className="text-slate-600 font-medium">{item.company}</p>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
+                  <div className="flex items-start gap-3.5">
+                    {item.logo ? (
+                      <div className="w-12 h-12 rounded-xl bg-white border border-slate-200/80 p-1.5 flex items-center justify-center shrink-0 shadow-xs">
+                        <Image
+                          src={item.logo}
+                          alt={item.company}
+                          width={44}
+                          height={44}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    ) : item.logoInitial ? (
+                      <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center shrink-0 font-bold text-sm text-slate-700">
+                        {item.logoInitial}
+                      </div>
+                    ) : (
+                      <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center shrink-0 text-slate-600">
+                        <Briefcase size={20} />
+                      </div>
+                    )}
+                    <div>
+                      <h3 className="text-lg font-bold text-slate-900">{item.role}</h3>
+                      <p className="text-slate-600 font-medium">{item.company}</p>
+                    </div>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-slate-100 text-slate-600 text-xs px-3 py-1 rounded-lg inline-flex items-center gap-1.5 font-medium">
@@ -84,10 +106,27 @@ export default function ExperienceSection() {
           educationData.map((item, index) => (
             <ScrollReveal key={item.id} delay={index * 0.1}>
               <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 sm:p-8">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
-                  <div>
-                    <h3 className="text-lg font-bold text-slate-900">{item.degree}</h3>
-                    <p className="text-slate-600 font-medium">{item.institution}</p>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
+                  <div className="flex items-start gap-3.5">
+                    {item.logo ? (
+                      <div className="w-12 h-12 rounded-xl bg-white border border-slate-200/80 p-1.5 flex items-center justify-center shrink-0 shadow-xs">
+                        <Image
+                          src={item.logo}
+                          alt={item.institution}
+                          width={44}
+                          height={44}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center shrink-0 text-slate-600">
+                        <GraduationCap size={22} />
+                      </div>
+                    )}
+                    <div>
+                      <h3 className="text-lg font-bold text-slate-900">{item.degree}</h3>
+                      <p className="text-slate-600 font-medium">{item.institution}</p>
+                    </div>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-slate-100 text-slate-600 text-xs px-3 py-1 rounded-lg font-medium">{item.period}</span>
@@ -109,14 +148,35 @@ export default function ExperienceSection() {
             </ScrollReveal>
           ))}
 
-        {activeTab === "achievements" && (
+        {activeTab === "certifications" && (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {certifications.map((item, index) => (
               <ScrollReveal key={item.id} delay={index * 0.1} className="h-full">
-                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow p-6 h-full flex flex-col justify-center">
-                  <h3 className="text-base font-bold text-slate-900 mb-1">{item.title}</h3>
-                  <p className="text-slate-600 text-sm font-medium mb-3">{item.issuer}</p>
-                  <div className="flex items-center justify-between text-xs text-slate-500 mt-auto">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow p-6 h-full flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-start gap-3.5 mb-3">
+                      {item.logo ? (
+                        <div className="w-11 h-11 rounded-xl bg-white border border-slate-200/80 p-1.5 flex items-center justify-center shrink-0 shadow-xs">
+                          <Image
+                            src={item.logo}
+                            alt={item.issuer}
+                            width={36}
+                            height={36}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-11 h-11 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center shrink-0 text-slate-500">
+                          <Trophy size={18} />
+                        </div>
+                      )}
+                      <div>
+                        <h3 className="text-base font-bold text-slate-900 leading-snug">{item.title}</h3>
+                        <p className="text-slate-600 text-sm font-medium mt-0.5">{item.issuer}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between text-xs text-slate-500 pt-3 border-t border-slate-100 mt-3">
                     <span>{item.date}</span>
                     <span className="font-mono text-slate-400">{item.credentialId}</span>
                   </div>

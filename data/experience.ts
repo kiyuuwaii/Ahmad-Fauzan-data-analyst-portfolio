@@ -7,6 +7,7 @@ export interface WorkExperience {
   description: string;
   techStack: string[];
   logoInitial?: string;
+  logo?: string;
   achievements?: string[];
 }
 
@@ -28,6 +29,7 @@ export interface Certification {
   issuer: string;
   date: string;
   credentialId: string;
+  logo?: string;
 }
 
 // Interface for backward compatibility with legacy ExperienceItem / ExperienceSection
@@ -88,7 +90,7 @@ export const educationData: EducationData[] = [
       "User Experience Research"
     ],
     location: "Surabaya, Indonesia",
-    logo: "PENS"
+    logo: "/logo/Logo_PENS.png"
   },
   {
     id: "edu-2",
@@ -105,7 +107,7 @@ export const educationData: EducationData[] = [
       "Object-Oriented Analysis & Design",
       "User Experience Research"
     ],
-    logo: "PENS"
+    logo: "/logo/logo_Rework.png"
   }
 ];
 
@@ -115,7 +117,8 @@ export const certifications: Certification[] = [
     title: "Data Analysis and Visualization Professional Certificate",
     issuer: "IBM SkillsBuild",
     date: "2024",
-    credentialId: "IBM-SB-DA-849201"
+    credentialId: "IBM-SB-DA-849201",
+    logo: "/logo/logo_ibm.png"
   },
   {
     id: "cert-2",
