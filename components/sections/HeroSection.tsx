@@ -144,12 +144,12 @@ export default function HeroSection() {
 
         {/* Portrait */}
         <div className="lg:col-span-5 flex justify-center lg:justify-end w-full mt-8 lg:mt-0">
-          <div className="relative aspect-[4/5] w-full max-w-md rounded-3xl shadow-xl border-4 border-white overflow-hidden bg-slate-100">
+          <div className="group relative aspect-[4/5] w-full max-w-md rounded-3xl border-4 border-white bg-slate-100 overflow-hidden shadow-xl transition-all duration-500 ease-out hover:scale-[1.03] hover:shadow-2xl hover:border-slate-400">
             <Image
               src="/IMG_6992.png"
               alt="Ahmad Fauzan Ash Shidiq"
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               priority
             />
           </div>
