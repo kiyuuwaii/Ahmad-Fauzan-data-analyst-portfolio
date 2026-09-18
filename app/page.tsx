@@ -8,38 +8,42 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
   return (
-    <main className="max-w-6xl xl:max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-32 pb-24 space-y-36 overflow-hidden">
-      <ScrollReveal>
-        <HeroSection />
-      </ScrollReveal>
+    <main className="w-full overflow-x-hidden space-y-28 pt-32 pb-24">
+      <div className="max-w-6xl xl:max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+        <ScrollReveal>
+          <HeroSection />
+        </ScrollReveal>
+      </div>
       
       <ScrollReveal>
         <AboutSection />
       </ScrollReveal>
       
-      <ScrollReveal>
-        <ExperienceSection />
-      </ScrollReveal>
-      
-      <ScrollReveal>
-        <ProjectsSection />
-      </ScrollReveal>
-      
-      <ScrollReveal>
-        <SkillsSection />
-      </ScrollReveal>
-      
-      <ScrollReveal>
-        <ContactSection />
-      </ScrollReveal>
+      <div className="max-w-6xl xl:max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 space-y-28">
+        <ScrollReveal>
+          <ExperienceSection />
+        </ScrollReveal>
+        
+        <ScrollReveal>
+          <ProjectsSection />
+        </ScrollReveal>
+        
+        <ScrollReveal>
+          <SkillsSection />
+        </ScrollReveal>
+        
+        <ScrollReveal>
+          <ContactSection />
+        </ScrollReveal>
 
-      <ScrollReveal>
-        <footer className="pt-8 border-t border-slate-200 text-center">
-          <p className="text-slate-500 text-sm">
-            &copy; {new Date().getFullYear()} Ahmad Fauzan Ash Shidiq
-          </p>
-        </footer>
-      </ScrollReveal>
+        <ScrollReveal>
+          <footer className="pt-8 border-t border-slate-200 text-center">
+            <p className="text-slate-500 text-sm">
+              &copy; {new Date().getFullYear()} Ahmad Fauzan Ash Shidiq
+            </p>
+          </footer>
+        </ScrollReveal>
+      </div>
     </main>
   );
 }

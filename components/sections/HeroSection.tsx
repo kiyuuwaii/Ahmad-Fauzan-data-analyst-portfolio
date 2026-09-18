@@ -72,7 +72,7 @@ export default function HeroSection() {
           </div>
 
           {/* CTA buttons */}
-          <div className="flex flex-wrap items-center gap-4 mb-10 justify-start">
+          <div className="flex flex-wrap items-center gap-4 mb-5 justify-start">
             <a
               href="#projects"
               className="bg-slate-900 hover:bg-slate-800 text-white rounded-xl px-6 py-3 text-sm font-medium shadow-sm transition inline-flex items-center gap-2"
@@ -88,17 +88,17 @@ export default function HeroSection() {
           </div>
 
           {/* Follow me */}
-            <div className="flex items-center gap-4 mt-8 pt-6 border-t border-slate-200">
-              <span className="text-slate-500 text-sm font-medium">Follow me:</span>
+            <div className="flex items-center gap-2 mt-2 pt-2 border-t border-slate-500">
+              <span className="text-slate-500 text-base font-semibold">Follow me:</span>
               <div className="flex gap-2">
                 <a
                   href={profileData.socials.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                  className="group relative flex h-9 w-9 items-center justify-center rounded-full text-slate-600 transition-all duration-200 hover:bg-slate-900 hover:text-white"
+                  className="group relative flex h-12 w-12 items-center justify-center rounded-full text-slate-600 transition-all duration-200 hover:bg-slate-900 hover:text-white"
                 >
-                  <LinkedinIcon className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" />
+                  <LinkedinIcon className="h-6 w-6 transition-transform duration-200 group-hover:scale-110" />
                   <div className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 transition-all duration-200 ease-out group-hover:-top-9 group-hover:opacity-100 z-20">
                     <div className="relative rounded-md bg-slate-900 px-2.5 py-1 text-[11px] font-medium text-white shadow-md whitespace-nowrap">
                       LinkedIn
@@ -112,9 +112,9 @@ export default function HeroSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
-                  className="group relative flex h-9 w-9 items-center justify-center rounded-full text-slate-600 transition-all duration-200 hover:bg-slate-900 hover:text-white"
+                  className="group relative flex h-12 w-12 items-center justify-center rounded-full text-slate-600 transition-all duration-200 hover:bg-slate-900 hover:text-white"
                 >
-                  <GithubIcon className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" />
+                  <GithubIcon className="h-6 w-6 transition-transform duration-200 group-hover:scale-110" />
                   <div className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 transition-all duration-200 ease-out group-hover:-top-9 group-hover:opacity-100 z-20">
                     <div className="relative rounded-md bg-slate-900 px-2.5 py-1 text-[11px] font-medium text-white shadow-md whitespace-nowrap">
                       GitHub
@@ -128,9 +128,9 @@ export default function HeroSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="group relative flex h-9 w-9 items-center justify-center rounded-full text-slate-600 transition-all duration-200 hover:bg-slate-900 hover:text-white"
+                  className="group relative flex h-12 w-12 items-center justify-center rounded-full text-slate-600 transition-all duration-200 hover:bg-slate-900 hover:text-white"
                 >
-                  <InstagramIcon className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" />
+                  <InstagramIcon className="h-6 w-6 transition-transform duration-200 group-hover:scale-110" />
                   <div className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 transition-all duration-200 ease-out group-hover:-top-9 group-hover:opacity-100 z-20">
                     <div className="relative rounded-md bg-slate-900 px-2.5 py-1 text-[11px] font-medium text-white shadow-md whitespace-nowrap">
                       Instagram
@@ -143,7 +143,7 @@ export default function HeroSection() {
         </div>
 
         {/* Portrait */}
-        <div className="lg:col-span-5 flex justify-center lg:justify-end w-full mt-8 lg:mt-0">
+        <div className="lg:col-span-5 flex justify-center lg:justify-end w-full mt-8 lg:mt-10">
           <div className="group relative aspect-[4/5] w-full max-w-md rounded-3xl border-4 border-white bg-slate-100 overflow-hidden shadow-xl transition-all duration-500 ease-out hover:scale-[1.03] hover:shadow-2xl hover:border-slate-400">
             <Image
               src="/IMG_6992.png"

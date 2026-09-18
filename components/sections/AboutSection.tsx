@@ -16,7 +16,7 @@ const iconMap: Record<string, any> = {
 export default function AboutSection() {
   return (
     <section id="about" className="scroll-mt-28 py-20">
-      <div className="max-w-6xl xl:max-w-7xl mx-auto">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
         {/* Section header - left aligned */}
         <div className="mb-14">
           <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">// ABOUT ME</span>
@@ -28,7 +28,7 @@ export default function AboutSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left: Photo */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-4 xl:col-span-4">
             <div className="relative aspect-square w-full rounded-3xl overflow-hidden shadow-md border border-slate-200 bg-slate-100">
               <Image
                 src="/Foto-Formal-2-Croped.jpeg"
@@ -40,8 +40,8 @@ export default function AboutSection() {
           </div>
 
           {/* Right: Detail card */}
-          <div className="lg:col-span-7">
-            <div className="bg-white rounded-3xl border border-slate-200/80 p-8 sm:p-10 shadow-sm flex flex-col h-full">
+          <div className="lg:col-span-8 xl:col-span-8">
+            <div className="bg-white rounded-3xl border border-slate-200/80 p-8 sm:py-10 sm:px-12 lg:px-16 shadow-sm flex flex-col h-full">
               <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">{profileData.aboutGreeting}</h3>
               <div className="text-slate-600 leading-relaxed space-y-4 mb-8">
                 {profileData.aboutText.map((paragraph, idx) => (

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import InteractiveBackground from "@/components/InteractiveBackground";
 import BackToTop from "@/components/BackToTop";
+import ScrollVignette from "@/components/ScrollVignette";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} bg-white text-slate-900 min-h-screen antialiased`}>
+        <ScrollVignette />
         <InteractiveBackground />
         <Navbar />
         {children}
