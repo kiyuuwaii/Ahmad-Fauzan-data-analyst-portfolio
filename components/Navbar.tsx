@@ -37,7 +37,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-auto max-w-[95vw]">
-      <div className="flex items-center gap-1 p-1.5 bg-white/90 backdrop-blur-md border border-slate-200/90 shadow-lg shadow-slate-200/50 rounded-full whitespace-nowrap overflow-x-auto no-scrollbar">
+      <div className="flex items-center gap-2 sm:gap-3 px-5 py-2.5 sm:px-7 sm:py-3 min-w-[90%] sm:min-w-fit md:min-w-[680px] justify-center bg-white/90 backdrop-blur-md border border-slate-200/90 shadow-lg shadow-slate-200/50 rounded-full whitespace-nowrap overflow-x-auto no-scrollbar">
         {navItems.map((item) => {
           const isActive = activeSection === item.id;
           const Icon = item.icon;
@@ -47,11 +47,11 @@ export default function Navbar() {
               href={item.path}
               className={`flex items-center gap-1.5 transition-all duration-200 ${
                 isActive
-                  ? "bg-slate-900 text-white rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium shadow-sm"
-                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-full px-3 py-1.5 text-xs sm:text-sm font-medium"
+                  ? "bg-slate-900 text-white rounded-full px-4 py-2 sm:px-5 sm:py-2 text-sm sm:text-base font-medium shadow-sm"
+                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-full px-4 py-2 sm:px-5 sm:py-2 text-sm sm:text-base font-medium"
               }`}
             >
-              <Icon size={15} />
+              <Icon size={18} />
               <span className={isActive ? "inline-block" : "hidden sm:inline-block"}>{item.name}</span>
             </a>
           );

@@ -91,7 +91,7 @@ export default function HeroSection() {
         <div className="lg:col-span-5 flex justify-center lg:justify-end w-full mt-8 lg:mt-0">
           <div className="relative aspect-[4/5] w-full max-w-md rounded-3xl shadow-xl border-4 border-white overflow-hidden bg-slate-100">
             <Image
-              src="/Foto-Formal-2-Croped.jpeg"
+              src="/IMG_6992.png"
               alt="Ahmad Fauzan Ash Shidiq"
               fill
               className="object-cover"
