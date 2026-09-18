@@ -1,83 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { FolderGit2, Star, ExternalLink, Code } from "lucide-react";
+import { FolderGit2, ExternalLink, Code, Star } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
+import { projects as projectsData } from "@/data/projects";
 
 const categories = [
-  { id: "all", label: "All" },
+  { id: "all", label: "All Projects" },
   { id: "bi-dashboards", label: "BI & Dashboards" },
   { id: "sql-analytics", label: "SQL & Analytics" },
   { id: "exploratory-data", label: "Exploratory Data" },
 ];
-
-const projectsData = [
-  {
-    id: "p1",
-    title: "Regional Sales Performance Dashboard",
-    description: "Built an interactive multi-page Power BI dashboard monitoring sales KPIs across regional branches, enabling branch managers to drill down into weekly and monthly performance trends.",
-    category: "bi-dashboards",
-    featured: true,
-    status: "Completed",
-    date: "2024",
-    metrics: [
-      { label: "Data Sources", value: "3 Databases" },
-      { label: "Dashboard Pages", value: "5 Interactive Views" },
-    ],
-    techStack: ["Power BI", "PostgreSQL", "DAX", "Excel"],
-    codeLink: "#",
-    demoLink: "#",
-  },
-  {
-    id: "p2",
-    title: "Customer Churn Analysis with SQL",
-    description: "Developed a structured SQL analysis pipeline to identify key churn indicators from transactional and behavioral data, delivering segmented retention strategies to the marketing team.",
-    category: "sql-analytics",
-    featured: false,
-    status: "Completed",
-    date: "2024",
-    metrics: [
-      { label: "Query Complexity", value: "Multi-join CTEs" },
-      { label: "Segments Identified", value: "4 Risk Groups" },
-    ],
-    techStack: ["PostgreSQL", "SQL", "Excel"],
-    codeLink: "#",
-    demoLink: "#",
-  },
-  {
-    id: "p3",
-    title: "E-Commerce EDA with Python",
-    description: "Conducted comprehensive exploratory data analysis on e-commerce transaction records using Python, uncovering seasonal purchasing patterns and product category performance insights.",
-    category: "exploratory-data",
-    featured: false,
-    status: "Completed",
-    date: "2023",
-    metrics: [
-      { label: "Analysis Depth", value: "Full EDA Pipeline" },
-      { label: "Visualizations", value: "Charts & Heatmaps" },
-    ],
-    techStack: ["Python", "Pandas", "Matplotlib", "Seaborn"],
-    codeLink: "#",
-    demoLink: "#",
-  },
-  {
-    id: "p4",
-    title: "Supply Chain Efficiency Tracker",
-    description: "Designed an Excel-based analytics model with Power Query automation to track supply chain delivery timelines and flag bottleneck patterns across warehouse operations.",
-    category: "bi-dashboards",
-    featured: true,
-    status: "Active Development",
-    date: "2024",
-    metrics: [
-      { label: "Automation Level", value: "Power Query ETL" },
-      { label: "Tracked Metrics", value: "Delivery & Lead Time" },
-    ],
-    techStack: ["Excel", "Power Query", "DAX"],
-    codeLink: "#",
-    demoLink: "#",
-  },
-];
-
-import ScrollReveal from "@/components/ScrollReveal";
 
 export default function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState("all");

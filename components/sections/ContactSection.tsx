@@ -1,4 +1,5 @@
 import { Mail, MapPin, Phone, ArrowRight, Briefcase, Code, Camera } from "lucide-react";
+import { profileData } from "@/data/profile";
 
 export default function ContactSection() {
   return (
@@ -21,43 +22,48 @@ export default function ContactSection() {
               </div>
               <div>
                 <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-0.5">Email</p>
-                <a href="mailto:fauzan@example.com" className="text-sm font-medium text-slate-800 hover:text-slate-600 transition-colors">
-                  fauzan@example.com
+                <a href={`mailto:${profileData.contact.email}`} className="text-sm font-medium text-slate-800 hover:text-slate-600 transition-colors">
+                  {profileData.contact.email}
                 </a>
               </div>
             </div>
+            
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center flex-shrink-0 text-slate-600">
                 <Phone size={18} />
               </div>
               <div>
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-0.5">WhatsApp</p>
-                <a href="tel:+6281200000000" className="text-sm font-medium text-slate-800 hover:text-slate-600 transition-colors">
-                  +62 812-xxxx-xxxx
+                <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-0.5">Phone / WhatsApp</p>
+                <a href={`tel:${profileData.contact.phone.replace(/[^0-9+]/g, '')}`} className="text-sm font-medium text-slate-800 hover:text-slate-600 transition-colors">
+                  {profileData.contact.phone}
                 </a>
               </div>
             </div>
+            
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center flex-shrink-0 text-slate-600">
                 <MapPin size={18} />
               </div>
               <div>
                 <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-0.5">Location</p>
-                <p className="text-sm font-medium text-slate-800">Surabaya, Indonesia</p>
+                <p className="text-sm font-medium text-slate-800">{profileData.contact.location}</p>
               </div>
             </div>
           </div>
 
-          <div className="flex gap-3 justify-center md:justify-start">
-            <a href="#" aria-label="LinkedIn" className="w-11 h-11 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-500 hover:text-slate-900 hover:border-slate-300 transition-all">
-              <Briefcase size={18} />
-            </a>
-            <a href="#" aria-label="GitHub" className="w-11 h-11 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-500 hover:text-slate-900 hover:border-slate-300 transition-all">
-              <Code size={18} />
-            </a>
-            <a href="#" aria-label="Instagram" className="w-11 h-11 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-500 hover:text-slate-900 hover:border-slate-300 transition-all">
-              <Camera size={18} />
-            </a>
+          <div>
+            <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-3">On The Web</p>
+            <div className="flex gap-3 justify-start">
+              <a href={profileData.socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-11 h-11 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-500 hover:text-slate-900 hover:border-slate-300 transition-all">
+                <Briefcase size={18} />
+              </a>
+              <a href={profileData.socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="w-11 h-11 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-500 hover:text-slate-900 hover:border-slate-300 transition-all">
+                <Code size={18} />
+              </a>
+              <a href={profileData.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-11 h-11 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-500 hover:text-slate-900 hover:border-slate-300 transition-all">
+                <Camera size={18} />
+              </a>
+            </div>
           </div>
         </div>
 

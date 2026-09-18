@@ -3,51 +3,12 @@
 import { useState } from "react";
 import { Briefcase, GraduationCap, Trophy, MapPin, Calendar } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { workExperiences, educationData, certifications } from "@/data/experience";
 
 const tabs = [
   { id: "work", label: "Work Experience", icon: Briefcase },
   { id: "education", label: "Education", icon: GraduationCap },
   { id: "achievements", label: "Achievements", icon: Trophy },
-];
-
-const workData = [
-  {
-    id: "w1",
-    role: "Data Analyst Intern",
-    company: "PT. Example Analytics",
-    location: "Surabaya, Indonesia",
-    period: "Jan 2024 - Jun 2024",
-    description: "Built interactive Power BI dashboards for sales performance monitoring across 3 regional branches. Designed SQL queries to extract and transform weekly sales data from PostgreSQL, reducing manual reporting time. Conducted exploratory data analysis on customer churn patterns and presented findings to stakeholders.",
-    techStack: ["SQL", "Power BI", "PostgreSQL", "Excel"],
-  },
-  {
-    id: "w2",
-    role: "Laboratory Assistant",
-    company: "PENS - Data Science Lab",
-    location: "Surabaya, Indonesia",
-    period: "Aug 2022 - Dec 2023",
-    description: "Assisted in teaching database management and SQL fundamentals to junior students. Maintained lab datasets and prepared tutorial materials for hands-on data analysis sessions. Supported research projects involving statistical modeling and data preprocessing.",
-    techStack: ["Python", "SQL", "Excel", "R"],
-  },
-];
-
-const educationData = [
-  {
-    id: "e1",
-    degree: "D4 Game Technology",
-    institution: "Politeknik Elektronika Negeri Surabaya (PENS)",
-    period: "2020 - 2024",
-    gpa: "3.85/4.00",
-    description: "Focused on data-driven approaches to interactive systems, including procedural content generation, statistical modeling, and database architecture for game analytics pipelines.",
-    coursework: ["Database Systems", "Statistics & Probability", "Data Structures", "Machine Learning Fundamentals", "Data Visualization"],
-  },
-];
-
-const achievementData = [
-  { id: "a1", title: "Data Science Foundations", issuer: "IBM SkillsBuild", date: "2024", credentialId: "IBM-DS-2024-XXXX" },
-  { id: "a2", title: "Data Analytics with Python", issuer: "Hacktiv8", date: "2023", credentialId: "H8-DAP-2023-XXXX" },
-  { id: "a3", title: "Data Analyst with SQL", issuer: "DQLab", date: "2023", credentialId: "DQLAB-SQL-2023-XXXX" },
-  { id: "a4", title: "Data Visualization", issuer: "Dicoding Indonesia", date: "2023", credentialId: "DIC-VIZ-2023-XXXX" },
 ];
 
 export default function ExperienceSection() {
@@ -90,7 +51,7 @@ export default function ExperienceSection() {
       {/* Tab content */}
       <div className="space-y-6">
         {activeTab === "work" &&
-          workData.map((item, index) => (
+          workExperiences.map((item, index) => (
             <ScrollReveal key={item.id} delay={index * 0.1}>
               <div className="bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow p-6 sm:p-8">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
@@ -150,7 +111,7 @@ export default function ExperienceSection() {
 
         {activeTab === "achievements" && (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {achievementData.map((item, index) => (
+            {certifications.map((item, index) => (
               <ScrollReveal key={item.id} delay={index * 0.1} className="h-full">
                 <div className="bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow p-6 h-full flex flex-col justify-center">
                   <h3 className="text-base font-bold text-slate-900 mb-1">{item.title}</h3>

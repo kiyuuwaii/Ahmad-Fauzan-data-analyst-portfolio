@@ -22,7 +22,7 @@ export interface EducationData {
   logo?: string;
 }
 
-export interface Achievement {
+export interface Certification {
   id: string;
   title: string;
   issuer: string;
@@ -76,8 +76,8 @@ export const educationData: EducationData[] = [
     id: "edu-1",
     degree: "D4 Game Technology",
     institution: "Politeknik Elektronika Negeri Surabaya (PENS)",
-    period: "2020 - 2024",
-    gpa: "3.85/4.00",
+    period: "2022 - 2026",
+    gpa: "3.74/4.00",
     description: "Graduated with honors, focusing on computational logic, system modeling, relational database design, and algorithmic problem solving. Applied statistical principles and simulated behavioral state machines to analyze complex system outputs.",
     coursework: [
       "Database Systems & SQL Modeling",
@@ -89,33 +89,50 @@ export const educationData: EducationData[] = [
     ],
     location: "Surabaya, Indonesia",
     logo: "PENS"
+  },
+  {
+    id: "edu-2",
+    degree: "Professional Data Analyst",
+    institution: "Rework Academy",
+    period: "Sep 2026 - Dec 2026",
+    gpa: "3.85/4.00",
+    description: "Graduated with honors, focusing on computational logic, system modeling, relational database design, and algorithmic problem solving. Applied statistical principles and simulated behavioral state machines to analyze complex system outputs.",
+    coursework: [
+      "Database Systems & SQL Modeling",
+      "Data Structures & Algorithms",
+      "Applied Statistics & Probability",
+      "System Modeling & Simulation",
+      "Object-Oriented Analysis & Design",
+      "User Experience Research"
+    ],
+    logo: "PENS"
   }
 ];
 
-export const achievements: Achievement[] = [
+export const certifications: Certification[] = [
   {
-    id: "ach-1",
+    id: "cert-1",
     title: "Data Analysis and Visualization Professional Certificate",
     issuer: "IBM SkillsBuild",
     date: "2024",
     credentialId: "IBM-SB-DA-849201"
   },
   {
-    id: "ach-2",
+    id: "cert-2",
     title: "SQL for Data Science Bootcamp",
     issuer: "Hacktiv8",
     date: "2023",
     credentialId: "HCK-SQL-554209"
   },
   {
-    id: "ach-3",
+    id: "cert-3",
     title: "Data Analyst Track: Data Modeling & Exploration",
     issuer: "DQLab",
     date: "2023",
     credentialId: "DQLAB-DA-2023081"
   },
   {
-    id: "ach-4",
+    id: "cert-4",
     title: "Memulai Pemrograman dengan Python",
     issuer: "Dicoding Indonesia",
     date: "2022",

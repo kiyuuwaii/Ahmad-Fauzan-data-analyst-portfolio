@@ -3,25 +3,36 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { MapPin, Calendar, FolderKanban, Mail, Briefcase, Code, Camera } from "lucide-react";
+import { profileData } from "@/data/profile";
 
 export default function HeroSection() {
   const [typedText, setTypedText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
-  const fullText = "Data Analyst";
+  
+  const textToType = profileData.role;
 
   useEffect(() => {
-    let i = 0;
-    const typing = setInterval(() => {
-      setTypedText(fullText.substring(0, i));
-      i++;
-      if (i > fullText.length) clearInterval(typing);
+    let currentText = "";
+    let currentIndex = 0;
+    
+    const typeInterval = setInterval(() => {
+      if (currentIndex < textToType.length) {
+        currentText += textToType[currentIndex];
+        setTypedText(currentText);
+        currentIndex++;
+      } else {
+        clearInterval(typeInterval);
+      }
     }, 100);
-    return () => clearInterval(typing);
-  }, []);
+
+    return () => clearInterval(typeInterval);
+  }, [textToType]);
 
   useEffect(() => {
-    const blink = setInterval(() => setShowCursor((prev) => !prev), 530);
-    return () => clearInterval(blink);
+    const cursorInterval = setInterval(() => {
+      setShowCursor((prev) => !prev);
+    }, 500);
+    return () => clearInterval(cursorInterval);
   }, []);
 
   return (
@@ -34,11 +45,10 @@ export default function HeroSection() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            Available for freelance work
+            {profileData.infoCards.find(card => card.label === "Status")?.value || "Available"}
           </div>
 
-          <h1 className="text-5xl sm:text-6xl font-extrabold text-slate-900 tracking-tight mb-4 leading-[1.1]">
-            Hi, I&apos;m Ahmad Fauzan<br />Ash Shidiq
+          <h1 className="text-5xl sm:text-6xl font-extrabold text-slate-900 tracking-tight mb-4 leading-[1.1]" dangerouslySetInnerHTML={{ __html: `Hi, I'm ${profileData.fullName.split(' ').slice(0, 2).join(' ')}<br />${profileData.fullName.split(' ').slice(2).join(' ')}` }}>
           </h1>
 
           <div className="text-2xl sm:text-3xl font-bold text-slate-700 mb-6 h-10">
@@ -47,7 +57,7 @@ export default function HeroSection() {
           </div>
 
           <p className="text-slate-600 leading-relaxed text-base sm:text-lg mb-8 max-w-lg">
-            I solve complex business problems through data analysis, building interactive dashboards, and transforming raw datasets into strategic decisions that drive measurable impact.
+            {profileData.tagline}
           </p>
 
           {/* Quick badges */}
@@ -77,14 +87,14 @@ export default function HeroSection() {
           </div>
 
           {/* Follow me */}
-          <div className="flex items-center gap-4">
-            <span className="text-slate-500 text-sm font-medium">Follow me:</span>
-            <div className="flex gap-3">
-              <a href="#" aria-label="LinkedIn" className="text-slate-400 hover:text-slate-900 transition-colors"><Briefcase size={20} /></a>
-              <a href="#" aria-label="GitHub" className="text-slate-400 hover:text-slate-900 transition-colors"><Code size={20} /></a>
-              <a href="#" aria-label="Instagram" className="text-slate-400 hover:text-slate-900 transition-colors"><Camera size={20} /></a>
+            <div className="flex items-center gap-4 mt-8 pt-6 border-t border-slate-200">
+              <span className="text-slate-500 text-sm font-medium">Follow me:</span>
+              <div className="flex gap-3">
+                <a href={profileData.socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-slate-400 hover:text-slate-900 transition-colors"><Briefcase size={20} /></a>
+                <a href={profileData.socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-slate-400 hover:text-slate-900 transition-colors"><Code size={20} /></a>
+                <a href={profileData.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-slate-400 hover:text-slate-900 transition-colors"><Camera size={20} /></a>
+              </div>
             </div>
-          </div>
         </div>
 
         {/* Portrait */}
