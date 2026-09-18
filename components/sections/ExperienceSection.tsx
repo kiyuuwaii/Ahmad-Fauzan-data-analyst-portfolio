@@ -1,11 +1,11 @@
 import ExperienceItem from "@/components/ExperienceItem";
 import { experiences } from "@/data/experience";
 
-export default function ExperiencePage() {
+export default function ExperienceSection() {
   return (
-    <main className="animate-in fade-in slide-in-from-bottom-4 duration-500 max-w-3xl mx-auto">
+    <section id="experience" className="scroll-mt-24 mb-24 max-w-3xl mx-auto">
       <div className="mb-10 text-center">
-        <h1 className="text-3xl font-bold text-zinc-100 tracking-tight mb-3">Work Experience</h1>
+        <h2 className="text-3xl font-bold text-zinc-100 tracking-tight mb-3">Work Experience</h2>
         <p className="text-zinc-400">
           My professional journey focusing on delivering data-driven business impact.
         </p>
@@ -20,7 +20,6 @@ export default function ExperiencePage() {
           />
         ))}
       </div>
-    </main>
+    </section>
   );
 }
-

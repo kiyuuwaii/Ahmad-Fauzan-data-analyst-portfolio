@@ -1,12 +1,12 @@
 import { Mail, MapPin, Phone, ArrowRight, Code, Briefcase, Camera } from "lucide-react";
 import Link from "next/link";
 
-export default function ContactPage() {
+export default function ContactSection() {
   return (
-    <main className="animate-in fade-in slide-in-from-bottom-4 duration-500 max-w-5xl mx-auto">
-      <div className="mb-12">
-        <h1 className="text-3xl font-bold text-zinc-100 tracking-tight mb-3">Get In Touch</h1>
-        <p className="text-zinc-400 max-w-2xl">
+    <section id="contact" className="scroll-mt-24 mb-10 max-w-5xl mx-auto">
+      <div className="mb-12 text-center md:text-left">
+        <h2 className="text-3xl font-bold text-zinc-100 tracking-tight mb-3">Get In Touch</h2>
+        <p className="text-zinc-400 max-w-2xl mx-auto md:mx-0">
           Interested in working together or have a question about my projects? Feel free to reach out.
         </p>
       </div>
@@ -52,7 +52,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex gap-4 justify-center md:justify-start">
             <Link href="#" className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800 transition-colors">
               <Briefcase size={20} />
             </Link>
@@ -118,6 +118,6 @@ export default function ContactPage() {
           </form>
         </div>
       </div>
-    </main>
+    </section>
   );
 }

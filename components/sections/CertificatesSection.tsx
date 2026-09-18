@@ -1,11 +1,11 @@
 import CertificateCard from "@/components/CertificateCard";
 import { certificates } from "@/data/certificates";
 
-export default function CertificatePage() {
+export default function CertificatesSection() {
   return (
-    <main className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+    <section id="certificate" className="scroll-mt-24 mb-24">
       <div className="mb-10 text-center">
-        <h1 className="text-3xl font-bold text-zinc-100 tracking-tight mb-3">Certifications</h1>
+        <h2 className="text-3xl font-bold text-zinc-100 tracking-tight mb-3">Certifications</h2>
         <p className="text-zinc-400 max-w-2xl mx-auto">
           Continuous learning and verified credentials that strengthen my analytical foundation.
         </p>
@@ -16,7 +16,6 @@ export default function CertificatePage() {
           <CertificateCard key={cert.id} certificate={cert} />
         ))}
       </div>
-    </main>
+    </section>
   );
 }
-
