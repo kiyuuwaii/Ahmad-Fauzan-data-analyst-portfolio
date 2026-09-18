@@ -20,7 +20,7 @@ export default function AboutPage() {
           <div className="relative w-32 h-32 mb-6">
             <div className="absolute inset-0 rounded-full border-2 border-zinc-700 overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
+                src="/Foto-Formal-2-Criooed.jpeg"
                 alt="Ahmad Fauzan Ash Shidiq"
                 fill
                 className="object-cover"
