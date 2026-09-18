@@ -16,12 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className={`${inter.className} bg-zinc-950 text-zinc-100 min-h-screen selection:bg-emerald-500/30 selection:text-emerald-200 antialiased`}>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.className} bg-slate-50 text-slate-900 min-h-screen selection:bg-emerald-100 selection:text-emerald-900 antialiased`}>
         <Navbar />
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-24 pb-16">
-          {children}
-        </div>
+        {children}
       </body>
     </html>
   );

@@ -1,22 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Home, User, Briefcase, FolderGit2, Code2, Mail } from "lucide-react";
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", path: "#home", id: "home" },
-    { name: "About", path: "#about", id: "about" },
-    { name: "Education", path: "#education", id: "education" },
-    { name: "Tools", path: "#tools", id: "tools" },
-    { name: "Experience", path: "#experience", id: "experience" },
-    { name: "Projects", path: "#projects", id: "projects" },
-    { name: "Certificates", path: "#certificates", id: "certificates" },
-    { name: "Contact", path: "#contact", id: "contact" },
+    { name: "Home", path: "#home", id: "home", icon: Home },
+    { name: "About", path: "#about", id: "about", icon: User },
+    { name: "Experience", path: "#experience", id: "experience", icon: Briefcase },
+    { name: "Projects", path: "#projects", id: "projects", icon: FolderGit2 },
+    { name: "Skills", path: "#skills", id: "skills", icon: Code2 },
+    { name: "Contact", path: "#contact", id: "contact", icon: Mail },
   ];
 
   useEffect(() => {
@@ -40,63 +36,28 @@ export default function Navbar() {
   }, [navItems]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/60">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="#home" className="text-zinc-100 font-bold text-xl tracking-tight">
-            Ahmad Fauzan<span className="text-emerald-500">.</span>
-          </Link>
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-auto max-w-[95vw]">
+      <div className="flex items-center gap-1 sm:gap-1.5 p-1.5 bg-white/85 backdrop-blur-md border border-slate-200 shadow-md rounded-full whitespace-nowrap overflow-x-auto no-scrollbar">
+        {navItems.map((item) => {
+          const isActive = activeSection === item.id;
+          const Icon = item.icon;
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-6">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.path}
-                className={`text-sm font-medium transition-colors ${
-                  activeSection === item.id
-                    ? "text-emerald-400"
-                    : "text-zinc-400 hover:text-zinc-100"
-                }`}
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-zinc-400 hover:text-zinc-100"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+          return (
+            <a
+              key={item.name}
+              href={item.path}
+              className={`flex items-center gap-1.5 transition-all duration-300 ${
+                isActive
+                  ? "bg-slate-900 text-white rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium shadow-sm"
+                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-full px-3 py-1.5 text-xs sm:text-sm font-medium"
+              }`}
+            >
+              <Icon size={16} className={isActive ? "text-white" : "text-slate-500"} />
+              <span className={isActive ? "inline-block" : "hidden sm:inline-block"}>{item.name}</span>
+            </a>
+          );
+        })}
       </div>
-
-      {/* Mobile Nav */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-zinc-950 border-b border-zinc-800/60">
-          <div className="flex flex-col px-4 py-4 space-y-4">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.path}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-base font-medium transition-colors ${
-                  activeSection === item.id
-                    ? "text-emerald-400"
-                    : "text-zinc-400 hover:text-zinc-100"
-                }`}
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
     </nav>
   );
 }
-
