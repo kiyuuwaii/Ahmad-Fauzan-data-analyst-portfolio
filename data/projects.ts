@@ -1,8 +1,25 @@
+export interface ProjectMetric {
+  label: string;
+  value: string;
+}
+
+export type ProjectCategory = 'all' | 'bi-dashboards' | 'sql-analytics' | 'exploratory-data';
+export type ProjectStatus = 'Completed' | 'Active Development';
+
 export interface Project {
   id: string;
   title: string;
   description: string;
+  category: ProjectCategory;
+  featured: boolean;
+  status: ProjectStatus;
+  date: string;
+  metrics: ProjectMetric[];
+  techStack: string[];
+  codeLink: string;
+  demoLink: string;
   thumbnail: string;
+  // Compatibility fields for current project components
   stack: string[];
   liveLink?: string;
   caseStudyLink?: string;
@@ -10,31 +27,87 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "1",
-    title: "Customer Churn Prediction Model",
-    description: "Machine learning model to predict customer churn with 85% accuracy. Reduced churn rate by 12% in Q3.",
-    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-    stack: ["Python", "Scikit-Learn", "Pandas", "Tableau"],
-    liveLink: "#",
-    caseStudyLink: "#",
+    id: "retail-sales-dashboard",
+    title: "Multi-Store Retail Sales & Performance Dashboard",
+    description: "Interactive executive dashboard tracking revenue velocity, product category margins, and regional store performance. Replaced manual multi-branch reporting with automated KPI drilldowns.",
+    category: "bi-dashboards",
+    featured: true,
+    status: "Completed",
+    date: "2024",
+    metrics: [
+      { label: "Data Scope", value: "50K+ Multi-Branch Rows" },
+      { label: "Refresh Cadence", value: "Automated Daily Pipeline" },
+      { label: "Key Focus", value: "Revenue Drivers & Margin Health" }
+    ],
+    techStack: ["Power BI", "DAX", "SQL Server", "Excel"],
+    codeLink: "https://github.com",
+    demoLink: "https://app.powerbi.com",
+    thumbnail: "/placeholder-project.png",
+    stack: ["Power BI", "DAX", "SQL Server", "Excel"],
+    liveLink: "https://app.powerbi.com",
+    caseStudyLink: "https://github.com"
   },
   {
-    id: "2",
-    title: "Sales Performance Dashboard",
-    description: "Interactive dashboard tracking KPIs across 5 regional branches. Identified $2M in up-sell opportunities.",
-    thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
-    stack: ["Power BI", "SQL", "Excel", "DAX"],
-    liveLink: "#",
-    caseStudyLink: "#",
+    id: "ecommerce-cohort-retention",
+    title: "E-Commerce Customer Retention & Cohort Decay SQL Model",
+    description: "End-to-end relational SQL model examining repeat purchasing cadence, monthly cohort decay, and customer lifecycle longevity using advanced window functions and CTE architectures.",
+    category: "sql-analytics",
+    featured: true,
+    status: "Completed",
+    date: "2023 - 2024",
+    metrics: [
+      { label: "Analysis Model", value: "Monthly Cohort Retention" },
+      { label: "Query Architecture", value: "Modular CTEs & Windowing" },
+      { label: "Business Outcome", value: "Repeat Buying Insights" }
+    ],
+    techStack: ["PostgreSQL", "SQL", "dbt", "Metabase"],
+    codeLink: "https://github.com",
+    demoLink: "https://github.com",
+    thumbnail: "/placeholder-project.png",
+    stack: ["PostgreSQL", "SQL", "dbt", "Metabase"],
+    liveLink: "https://github.com",
+    caseStudyLink: "https://github.com"
   },
   {
-    id: "3",
-    title: "E-Commerce Funnel Analysis",
-    description: "Analyzed user drop-offs in checkout funnel. Recommended UI changes that increased conversion by 4.5%.",
-    thumbnail: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=2076&auto=format&fit=crop",
-    stack: ["SQL", "Google Analytics", "Looker Studio"],
-    liveLink: "#",
-    caseStudyLink: "#",
+    id: "customer-churn-eda",
+    title: "Subscription Churn Drivers & Behavioral Pattern EDA",
+    description: "Exploratory data analysis investigating customer renewal behaviors, utilization frequency drops, and service ticket logs to identify early indicators of subscription attrition.",
+    category: "exploratory-data",
+    featured: false,
+    status: "Completed",
+    date: "2023",
+    metrics: [
+      { label: "Analytical Method", value: "Bivariate & Correlation EDA" },
+      { label: "Dataset Dimension", value: "Multi-Attribute User Logs" },
+      { label: "Key Deliverable", value: "Hypothesis Report & Action Plan" }
+    ],
+    techStack: ["Python", "Pandas", "NumPy", "Seaborn", "Jupyter"],
+    codeLink: "https://github.com",
+    demoLink: "https://github.com",
+    thumbnail: "/placeholder-project.png",
+    stack: ["Python", "Pandas", "NumPy", "Seaborn", "Jupyter"],
+    liveLink: "https://github.com",
+    caseStudyLink: "https://github.com"
+  },
+  {
+    id: "supply-chain-dispatch-monitor",
+    title: "Supply Chain Dispatch & Delivery Lead-Time Monitor",
+    description: "Operational dashboard tracking provincial transit intervals, dispatch bottlenecks, and courier SLA achievement to support logistics distribution monitoring.",
+    category: "bi-dashboards",
+    featured: false,
+    status: "Active Development",
+    date: "2024",
+    metrics: [
+      { label: "Operational Scope", value: "Inter-City Delivery Routes" },
+      { label: "Monitoring Focus", value: "Dispatch Bottlenecks & SLAs" },
+      { label: "Pipeline Status", value: "Staging Pipeline Testing" }
+    ],
+    techStack: ["Tableau", "PostgreSQL", "Python", "SQL"],
+    codeLink: "https://github.com",
+    demoLink: "https://public.tableau.com",
+    thumbnail: "/placeholder-project.png",
+    stack: ["Tableau", "PostgreSQL", "Python", "SQL"],
+    liveLink: "https://public.tableau.com",
+    caseStudyLink: "https://github.com"
   }
 ];
-

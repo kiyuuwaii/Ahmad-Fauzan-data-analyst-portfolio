@@ -1,29 +1,102 @@
-import { profileData } from "@/data/profile";
+"use client";
+
+import Image from "next/image";
+import { User, MapPin, GraduationCap, Mail, Phone, Briefcase, Download, Sparkles } from "lucide-react";
+
+const infoCards = [
+  { icon: User, label: "Name", value: "Ahmad Fauzan Ash Shidiq" },
+  { icon: MapPin, label: "Domisili", value: "Surabaya, Indonesia" },
+  { icon: GraduationCap, label: "Pendidikan", value: "D4 Game Technology, PENS" },
+  { icon: Mail, label: "Email", value: "fauzan@example.com" },
+  { icon: Phone, label: "Phone", value: "+62 812-xxxx-xxxx" },
+  { icon: Briefcase, label: "Status", value: "Available for Work" },
+];
+
+const interests = [
+  "Data Analysis", "SQL Querying", "Power BI & Tableau",
+  "Advanced Excel", "Python EDA", "Business Intelligence",
+];
 
 export default function AboutSection() {
   return (
-    <section id="about" className="scroll-mt-28">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div className="lg:col-span-7 flex flex-col gap-6">
-          <div>
-            <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight mb-2">About Me</h2>
-            <div className="w-12 h-1 bg-emerald-500 rounded-full mb-4"></div>
-          </div>
-          
-          <div className="text-slate-600 leading-relaxed space-y-4">
-            {profileData.aboutText.map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
-            ))}
-          </div>
+    <section id="about" className="scroll-mt-28 bg-slate-50/50 -mx-4 sm:-mx-6 px-4 sm:px-6 py-20 rounded-3xl">
+      <div className="max-w-5xl mx-auto">
+        {/* Section header */}
+        <div className="text-center mb-14">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">About Me</h2>
+          <p className="text-slate-500 max-w-xl mx-auto">
+            Passionate about turning raw data into strategic business solutions.
+          </p>
         </div>
-        
-        <div className="lg:col-span-5 grid grid-cols-2 gap-4">
-          {profileData.stats.map((stat, i) => (
-            <div key={i} className="bg-white border border-slate-200/80 shadow-sm rounded-2xl p-6 flex flex-col items-center text-center hover:shadow-md hover:border-slate-300 transition-all">
-              <span className="text-4xl font-extrabold text-slate-900 mb-2">{stat.value}</span>
-              <span className="text-sm font-semibold text-slate-500">{stat.label}</span>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          {/* Left: Photo */}
+          <div className="lg:col-span-5">
+            <div className="relative aspect-[4/5] w-full max-w-sm mx-auto rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-100">
+              <Image
+                src="/Foto-Formal-2-Croped.jpeg"
+                alt="Ahmad Fauzan Ash Shidiq"
+                fill
+                className="object-cover"
+              />
             </div>
-          ))}
+          </div>
+
+          {/* Right: Detail card */}
+          <div className="lg:col-span-7 flex flex-col gap-8">
+            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 sm:p-8">
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">Hello There!</h3>
+              <p className="text-slate-600 leading-relaxed mb-6">
+                I am a Data Analyst with a strong foundation in statistics, database management, and visualization tools. My approach centers on understanding the business question first, then designing the right analytical framework to answer it with clarity and precision. I thrive on turning messy datasets into clean narratives that drive real decisions.
+              </p>
+
+              {/* 2x3 info grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                {infoCards.map((card) => {
+                  const Icon = card.icon;
+                  return (
+                    <div key={card.label} className="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-100">
+                      <div className="w-9 h-9 rounded-lg bg-white border border-slate-200 flex items-center justify-center flex-shrink-0 text-slate-600">
+                        <Icon size={16} />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide">{card.label}</p>
+                        <p className="text-sm font-medium text-slate-800">{card.value}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Interests */}
+              <div className="mb-8">
+                <h4 className="text-sm font-bold text-slate-900 mb-3">Interests & Focus</h4>
+                <div className="flex flex-wrap gap-2">
+                  {interests.map((tag) => (
+                    <span key={tag} className="bg-slate-100 text-slate-700 text-xs px-3 py-1.5 rounded-lg font-medium border border-slate-200/80">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Action buttons */}
+              <div className="flex flex-wrap gap-4">
+                <button
+                  type="button"
+                  className="bg-slate-900 hover:bg-slate-800 text-white rounded-xl px-5 py-2.5 font-medium shadow-sm transition inline-flex items-center gap-2"
+                >
+                  <Download size={16} /> Download My CV
+                </button>
+                <a
+                  href="#contact"
+                  className="bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 rounded-xl px-5 py-2.5 font-medium shadow-sm transition inline-flex items-center gap-2"
+                >
+                  <Sparkles size={16} /> Hire Me Now
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

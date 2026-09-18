@@ -1,20 +1,68 @@
-export const profileData = {
+export interface InfoCard {
+  icon: string;
+  label: string;
+  value: string;
+}
+
+export interface ContactInfo {
+  email: string;
+  phone: string;
+  location: string;
+}
+
+export interface SocialLinks {
+  linkedin: string;
+  github: string;
+  instagram: string;
+}
+
+export interface StatItem {
+  label: string;
+  value: string;
+}
+
+export interface ProfileData {
+  name: string;
+  fullName: string;
+  role: string;
+  tagline: string;
+  aboutGreeting: string;
+  aboutText: string[];
+  infoCards: InfoCard[];
+  interests: string[];
+  contact: ContactInfo;
+  socials: SocialLinks;
+  stats?: StatItem[];
+}
+
+export const profileData: ProfileData = {
   name: "Ahmad Fauzan",
   fullName: "Ahmad Fauzan Ash Shidiq",
   role: "Data Analyst",
   tagline: "I turn complex data into actionable business strategies.",
+  aboutGreeting: "Hello There!",
   aboutText: [
-    "I am a Data Analyst driven by the desire to solve complex business problems through data-backed insights. My approach focuses on extracting actionable intelligence from raw data rather than just building pretty charts.",
-    "With a strong foundation in SQL, Python, and data visualization tools, I bridge the gap between technical datasets and strategic business decisions."
+    "I am a Data Analyst with a background in Game Technology from Politeknik Elektronika Negeri Surabaya (PENS), where I developed a rigorous foundation in computational logic, system modeling, and structured data architecture. I specialize in transforming messy, high-volume datasets into transparent analytical frameworks and clear business roadmaps.",
+    "My focus centers on identifying operational bottlenecks, tracking user behavior patterns, and delivering intuitive business intelligence dashboards. By pairing advanced SQL querying and Python exploratory analysis with visual storytelling in Power BI, I bridge technical findings and strategic decisions to deliver measurable business impact."
   ],
-  stats: [
-    { label: "Years Experience", value: "2+" },
-    { label: "Projects Completed", value: "15+" },
-    { label: "Dashboards Built", value: "20+" },
-    { label: "Happy Clients", value: "10+" }
+  infoCards: [
+    { icon: "User", label: "Name", value: "Ahmad Fauzan Ash Shidiq" },
+    { icon: "MapPin", label: "Location", value: "Surabaya, Indonesia" },
+    { icon: "GraduationCap", label: "Education", value: "D4 Game Technology - PENS" },
+    { icon: "Mail", label: "Email", value: "fauzanash.shidiq@gmail.com" },
+    { icon: "Phone", label: "Phone", value: "+62 812 3456 7890" },
+    { icon: "Briefcase", label: "Status", value: "Available for Work" }
+  ],
+  interests: [
+    "Data Analysis",
+    "SQL Querying",
+    "Power BI & Tableau",
+    "Advanced Excel",
+    "Python EDA",
+    "Business Intelligence"
   ],
   contact: {
-    email: "hello@example.com",
+    email: "fauzanash.shidiq@gmail.com",
     phone: "+62 812 3456 7890",
     location: "Surabaya, Indonesia"
   },
@@ -22,6 +70,11 @@ export const profileData = {
     linkedin: "#",
     github: "#",
     instagram: "#"
-  }
+  },
+  stats: [
+    { label: "Education GPA", value: "3.85" },
+    { label: "Core Focus", value: "BI & SQL" },
+    { label: "Specialization", value: "Analytics" },
+    { label: "Availability", value: "Open" }
+  ]
 };
-

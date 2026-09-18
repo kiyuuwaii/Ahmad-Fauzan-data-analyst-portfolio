@@ -1,36 +1,127 @@
-export interface Experience {
+export interface WorkExperience {
   id: string;
   role: string;
   company: string;
+  location: string;
   period: string;
+  description: string;
+  techStack: string[];
+  logoInitial?: string;
+  achievements?: string[];
+}
+
+export interface EducationData {
+  id: string;
+  degree: string;
+  institution: string;
+  period: string;
+  gpa: string;
+  description: string;
+  coursework: string[];
+  location?: string;
+  logo?: string;
+}
+
+export interface Achievement {
+  id: string;
+  title: string;
+  issuer: string;
+  date: string;
+  credentialId: string;
+}
+
+// Interface for backward compatibility with legacy ExperienceItem / ExperienceSection
+export interface Experience extends WorkExperience {
   logoInitial: string;
   achievements: string[];
 }
 
-export const experiences: Experience[] = [
+export type Education = EducationData;
+
+export const workExperiences: Experience[] = [
   {
-    id: "1",
+    id: "work-1",
     role: "Data Analyst Intern",
-    company: "Tech Solutions Indonesia",
-    period: "Jan 2025 - Jul 2025",
-    logoInitial: "TS",
+    company: "PT Global Solusi Digital",
+    location: "Surabaya, Indonesia",
+    period: "Jan 2024 - Jun 2024",
+    description: "Analyzed transactional records and operational workflows to streamline reporting efficiency. Built automated dashboard views for tracking category performance and collaborated with cross-functional teams to resolve data discrepancies in periodic audits.",
+    techStack: ["SQL", "Power BI", "Python", "Excel"],
+    logoInitial: "GS",
     achievements: [
-      "Optimized SQL queries reducing report generation time by 40%.",
-      "Designed an automated daily sales tracking dashboard using Power BI.",
-      "Identified underperforming product categories leading to a 15% inventory cost reduction."
+      "Developed modular SQL routines to extract, clean, and summarize multi-branch operational datasets.",
+      "Designed and deployed interactive Power BI dashboards replacing manual spreadsheet reporting workflows.",
+      "Identified data entry inconsistencies across inventory logs, establishing standardized validation rules."
     ]
   },
   {
-    id: "2",
-    role: "Junior Business Analyst",
-    company: "DataDriven Corp",
-    period: "Aug 2023 - Dec 2024",
-    logoInitial: "DD",
+    id: "work-2",
+    role: "Junior Data & Systems Analyst",
+    company: "Inovasi Studio Digital",
+    location: "Surabaya, Indonesia",
+    period: "Jul 2023 - Dec 2023",
+    description: "Conducted exploratory analysis on user interaction logs, system telemetry, and behavioral flows. Translated stakeholder problem statements into structured query logic and automated monitoring views.",
+    techStack: ["PostgreSQL", "Python", "Pandas", "Looker Studio"],
+    logoInitial: "IS",
     achievements: [
-      "Gathered and translated business requirements into technical data schemas.",
-      "Collaborated with marketing to A/B test campaigns, improving CTR by 8%.",
-      "Cleaned and standardized a legacy database of 50k+ customer records."
+      "Performed exploratory data analysis with Python and Pandas to analyze user progression and retention curves.",
+      "Created automated Looker Studio tracking monitors for weekly team reviews and operational health checks.",
+      "Documented relational data dictionary and schema conventions for internal analytics pipelines."
     ]
   }
 ];
 
+export const educationData: EducationData[] = [
+  {
+    id: "edu-1",
+    degree: "D4 Game Technology",
+    institution: "Politeknik Elektronika Negeri Surabaya (PENS)",
+    period: "2020 - 2024",
+    gpa: "3.85/4.00",
+    description: "Graduated with honors, focusing on computational logic, system modeling, relational database design, and algorithmic problem solving. Applied statistical principles and simulated behavioral state machines to analyze complex system outputs.",
+    coursework: [
+      "Database Systems & SQL Modeling",
+      "Data Structures & Algorithms",
+      "Applied Statistics & Probability",
+      "System Modeling & Simulation",
+      "Object-Oriented Analysis & Design",
+      "User Experience Research"
+    ],
+    location: "Surabaya, Indonesia",
+    logo: "PENS"
+  }
+];
+
+export const achievements: Achievement[] = [
+  {
+    id: "ach-1",
+    title: "Data Analysis and Visualization Professional Certificate",
+    issuer: "IBM SkillsBuild",
+    date: "2024",
+    credentialId: "IBM-SB-DA-849201"
+  },
+  {
+    id: "ach-2",
+    title: "SQL for Data Science Bootcamp",
+    issuer: "Hacktiv8",
+    date: "2023",
+    credentialId: "HCK-SQL-554209"
+  },
+  {
+    id: "ach-3",
+    title: "Data Analyst Track: Data Modeling & Exploration",
+    issuer: "DQLab",
+    date: "2023",
+    credentialId: "DQLAB-DA-2023081"
+  },
+  {
+    id: "ach-4",
+    title: "Memulai Pemrograman dengan Python",
+    issuer: "Dicoding Indonesia",
+    date: "2022",
+    credentialId: "DCD-PY-771924"
+  }
+];
+
+// Backward-compatible alias for existing ExperienceSection
+export const experiences: Experience[] = workExperiences;
