@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { profileData } from "@/data/profile";
-import { Linkedin, Github, Instagram } from "lucide-react";
+import { Briefcase, Code, Camera } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function HeroSection() {
@@ -66,9 +66,9 @@ export default function HeroSection() {
           <div className="flex items-center gap-4">
             <span className="text-slate-500 text-sm font-medium">Follow me:</span>
             <div className="flex gap-3">
-              <a href={profileData.socials.linkedin} className="text-slate-400 hover:text-slate-900 transition-colors"><Linkedin size={20} /></a>
-              <a href={profileData.socials.github} className="text-slate-400 hover:text-slate-900 transition-colors"><Github size={20} /></a>
-              <a href={profileData.socials.instagram} className="text-slate-400 hover:text-slate-900 transition-colors"><Instagram size={20} /></a>
+              <a href={profileData.socials.linkedin} className="text-slate-400 hover:text-slate-900 transition-colors"><Briefcase size={20} /></a>
+              <a href={profileData.socials.github} className="text-slate-400 hover:text-slate-900 transition-colors"><Code size={20} /></a>
+              <a href={profileData.socials.instagram} className="text-slate-400 hover:text-slate-900 transition-colors"><Camera size={20} /></a>
             </div>
           </div>
         </div>
