@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, ReactNode } from "react";
+import { useRef, ReactNode, useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform, useMotionTemplate } from "framer-motion";
 
 interface TiltCardProps {
@@ -52,6 +52,19 @@ export default function TiltCard({ children, className = "" }: TiltCardProps) {
     x.set(0);
     y.set(0);
   };
+
+  const [isMobile, setIsMobile] = useState(true); // Default true for SSR safety, updated in effect
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  if (isMobile) {
+    return <div className={`relative w-full h-full ${className}`}>{children}</div>;
+  }
 
   return (
     <div 

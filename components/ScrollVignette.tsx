@@ -1,6 +1,6 @@
 export default function ScrollVignette() {
   return (
-    <div className="pointer-events-none fixed inset-0 z-30 select-none">
+    <div className="pointer-events-none fixed inset-0 z-30 select-none hidden sm:block">
       {/* Top Vignette */}
       <div 
         className="absolute top-0 left-0 right-0 h-12 sm:h-16 bg-gradient-to-b from-slate-50/95 via-sky-50/40 via-50% to-transparent backdrop-blur-[3px]"
