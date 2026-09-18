@@ -90,15 +90,53 @@ export default function HeroSection() {
           {/* Follow me */}
             <div className="flex items-center gap-4 mt-8 pt-6 border-t border-slate-200">
               <span className="text-slate-500 text-sm font-medium">Follow me:</span>
-              <div className="flex gap-4">
-                <a href={profileData.socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-slate-400 hover:text-slate-900 transition-colors">
-                  <LinkedinIcon className="w-5 h-5" />
+              <div className="flex gap-2">
+                <a
+                  href={profileData.socials.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="group relative flex h-9 w-9 items-center justify-center rounded-full text-slate-600 transition-all duration-200 hover:bg-slate-900 hover:text-white"
+                >
+                  <LinkedinIcon className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" />
+                  <div className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 transition-all duration-200 ease-out group-hover:-top-9 group-hover:opacity-100 z-20">
+                    <div className="relative rounded-md bg-slate-900 px-2.5 py-1 text-[11px] font-medium text-white shadow-md whitespace-nowrap">
+                      LinkedIn
+                      <div className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-slate-900"></div>
+                    </div>
+                  </div>
                 </a>
-                <a href={profileData.socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-slate-400 hover:text-slate-900 transition-colors">
-                  <GithubIcon className="w-5 h-5" />
+
+                <a
+                  href={profileData.socials.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="group relative flex h-9 w-9 items-center justify-center rounded-full text-slate-600 transition-all duration-200 hover:bg-slate-900 hover:text-white"
+                >
+                  <GithubIcon className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" />
+                  <div className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 transition-all duration-200 ease-out group-hover:-top-9 group-hover:opacity-100 z-20">
+                    <div className="relative rounded-md bg-slate-900 px-2.5 py-1 text-[11px] font-medium text-white shadow-md whitespace-nowrap">
+                      GitHub
+                      <div className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-slate-900"></div>
+                    </div>
+                  </div>
                 </a>
-                <a href={profileData.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-slate-400 hover:text-slate-900 transition-colors">
-                  <InstagramIcon className="w-5 h-5" />
+
+                <a
+                  href={profileData.socials.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="group relative flex h-9 w-9 items-center justify-center rounded-full text-slate-600 transition-all duration-200 hover:bg-slate-900 hover:text-white"
+                >
+                  <InstagramIcon className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" />
+                  <div className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 transition-all duration-200 ease-out group-hover:-top-9 group-hover:opacity-100 z-20">
+                    <div className="relative rounded-md bg-slate-900 px-2.5 py-1 text-[11px] font-medium text-white shadow-md whitespace-nowrap">
+                      Instagram
+                      <div className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-slate-900"></div>
+                    </div>
+                  </div>
                 </a>
               </div>
             </div>
