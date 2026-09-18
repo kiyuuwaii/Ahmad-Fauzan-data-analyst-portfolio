@@ -28,7 +28,7 @@ export default function ExperienceSection() {
 
       {/* Sub-tabs */}
       <div className="flex mb-10">
-        <div className="inline-flex items-center gap-1 p-1.5 rounded-full bg-white/50 backdrop-blur-2xl border border-white/80 shadow-[0_4px_20px_rgba(15,23,42,0.05),inset_0_1.5px_2px_rgba(255,255,255,0.9)]">
+        <div className="inline-flex items-center gap-1 p-1.5 rounded-full bg-white/50 backdrop-blur-md sm:backdrop-blur-2xl border border-white/80 shadow-[0_4px_20px_rgba(15,23,42,0.05),inset_0_1.5px_2px_rgba(255,255,255,0.9)]">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;

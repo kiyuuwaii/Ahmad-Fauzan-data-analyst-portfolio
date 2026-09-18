@@ -9,6 +9,11 @@ export default function NeatBackground() {
   useEffect(() => {
     if (!canvasRef.current) return;
 
+    // Mobile fallback: Don't initialize WebGL on mobile devices
+    if (window.innerWidth < 768) {
+      return;
+    }
+
     let isDestroyed = false;
 
     const initGradient = async () => {
@@ -151,9 +156,12 @@ export default function NeatBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 -z-50 pointer-events-none">
+    <div 
+      className="fixed inset-0 -z-50 pointer-events-none bg-gradient-to-br from-[#F8EEFF] via-[#EBF3FE] to-[#D5ECEB] sm:bg-none"
+    >
       <canvas
         ref={canvasRef}
+        className="hidden sm:block"
         style={{
           width: "100vw",
           height: "100vh",

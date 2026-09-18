@@ -56,7 +56,7 @@ export default function ProjectsSection() {
 
       {/* Filter tabs */}
       <div className="flex justify-start mb-10">
-        <div className="inline-flex items-center gap-1 p-1.5 rounded-full bg-white/50 backdrop-blur-2xl border border-white/80 shadow-xs flex-wrap">
+        <div className="inline-flex items-center gap-1 p-1.5 rounded-full bg-white/50 backdrop-blur-md sm:backdrop-blur-2xl border border-white/80 shadow-xs flex-wrap">
           {categories.map((cat) => {
             const isActive = activeFilter === cat.id;
             return (
@@ -165,7 +165,7 @@ export default function ProjectsSection() {
                   </a>
                   <a
                     href={project.demoLink}
-                    className="flex-1 flex items-center justify-center gap-2 bg-slate-900/85 backdrop-blur-xl border border-white/20 border-t-white/40 shadow-sm text-white hover:bg-slate-900 rounded-2xl px-4 py-2 text-sm font-medium transition-colors"
+                    className="flex-1 flex items-center justify-center gap-2 bg-slate-900/85 backdrop-blur-md sm:backdrop-blur-xl border border-white/20 border-t-white/40 shadow-sm text-white hover:bg-slate-900 rounded-2xl px-4 py-2 text-sm font-medium transition-colors"
                   >
                     <span className="relative z-10 flex items-center gap-2">
                       <ExternalLink size={15} /> Demo

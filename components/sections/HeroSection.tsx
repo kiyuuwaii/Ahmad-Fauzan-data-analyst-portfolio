@@ -77,7 +77,7 @@ export default function HeroSection() {
           <div className="flex flex-wrap items-center gap-4 mb-5 justify-start">
             <a
               href="#projects"
-              className="bg-gradient-to-b from-slate-800/90 via-slate-900/90 to-slate-950 backdrop-blur-xl border border-white/20 border-t-white/50 shadow-md text-white rounded-2xl px-6 py-3 text-sm font-medium transition-colors hover:bg-slate-900 inline-flex items-center gap-2"
+              className="bg-gradient-to-b from-slate-800/90 via-slate-900/90 to-slate-950 backdrop-blur-md sm:backdrop-blur-xl border border-white/20 border-t-white/50 shadow-md text-white rounded-2xl px-6 py-3 text-sm font-medium transition-colors hover:bg-slate-900 inline-flex items-center gap-2"
             >
               <span className="relative z-10 flex items-center gap-2">
                 <FolderKanban size={18} /> View Projects &rarr;

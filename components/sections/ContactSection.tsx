@@ -184,7 +184,7 @@ export default function ContactSection() {
             <button
               type="submit"
               disabled={status === 'loading'}
-              className="mt-1 flex items-center justify-center gap-2 w-full bg-gradient-to-b from-slate-800/90 via-slate-900/90 to-slate-950 backdrop-blur-xl border border-white/20 border-t-white/50 shadow-md text-white font-medium py-3 rounded-2xl transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+              className="mt-1 flex items-center justify-center gap-2 w-full bg-gradient-to-b from-slate-800/90 via-slate-900/90 to-slate-950 backdrop-blur-md sm:backdrop-blur-xl border border-white/20 border-t-white/50 shadow-md text-white font-medium py-3 rounded-2xl transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {status === 'loading' ? (
                 <>
