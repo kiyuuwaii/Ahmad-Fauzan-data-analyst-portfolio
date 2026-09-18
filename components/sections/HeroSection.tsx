@@ -41,7 +41,7 @@ export default function HeroSection() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         <div className="lg:col-span-7 flex flex-col items-start text-left">
           {/* Available badge */}
-          <div className="liquid-tag !bg-emerald-50/50 !text-emerald-700 !border-emerald-200 px-3 py-1 text-xs font-semibold inline-flex items-center gap-2 mb-6">
+          <div className="liquid-glass-card !rounded-full !bg-emerald-50/60 !border-emerald-200/80 px-4 py-1.5 text-xs font-semibold text-emerald-700 inline-flex items-center gap-2 mb-6">
             <span className="relative flex h-2 w-2 z-10">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -65,10 +65,10 @@ export default function HeroSection() {
 
           {/* Quick badges */}
           <div className="flex flex-wrap gap-3 mb-10 justify-start">
-            <span className="liquid-tag inline-flex items-center gap-1.5 px-3 py-1.5 text-sm">
+            <span className="liquid-glass-card !rounded-full px-4 py-2 text-xs font-medium text-slate-700 inline-flex items-center gap-1.5">
               <MapPin size={16} /> Surabaya, Indonesia
             </span>
-            <span className="liquid-tag inline-flex items-center gap-1.5 px-3 py-1.5 text-sm">
+            <span className="liquid-glass-card !rounded-full px-4 py-2 text-xs font-medium text-slate-700 inline-flex items-center gap-1.5">
               <Calendar size={16} /> Available Now
             </span>
           </div>
@@ -77,7 +77,7 @@ export default function HeroSection() {
           <div className="flex flex-wrap items-center gap-4 mb-5 justify-start">
             <a
               href="#projects"
-              className="liquid-btn-dark rounded-xl px-6 py-3 text-sm font-medium transition inline-flex items-center gap-2"
+              className="bg-gradient-to-b from-slate-800/90 via-slate-900/90 to-slate-950 backdrop-blur-xl border border-white/20 border-t-white/50 shadow-md text-white rounded-2xl px-6 py-3 text-sm font-medium transition-colors hover:bg-slate-900 inline-flex items-center gap-2"
             >
               <span className="relative z-10 flex items-center gap-2">
                 <FolderKanban size={18} /> View Projects &rarr;

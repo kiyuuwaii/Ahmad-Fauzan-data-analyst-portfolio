@@ -66,7 +66,7 @@ export default function ContactSection() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full">
         {/* Left: Contact info */}
         <div className="flex flex-col gap-6">
-          <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-4 sm:p-6 flex flex-col gap-2">
+          <div className="liquid-glass-card rounded-3xl p-4 sm:p-6 flex flex-col gap-2">
             <a href={`mailto:${profileData.contact.email}`} className="group flex items-center gap-4 p-3.5 rounded-2xl border border-transparent transition-all duration-300 ease-out hover:translate-x-2.5 hover:bg-slate-50 hover:border-slate-200/80 hover:shadow-sm cursor-pointer">
               <div className="w-10 h-10 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center flex-shrink-0 text-slate-600 transition-transform duration-300 group-hover:scale-110">
                 <Mail size={18} />
@@ -119,7 +119,7 @@ export default function ContactSection() {
         </div>
 
         {/* Right: Contact form */}
-        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 relative">
+        <div className="liquid-glass-card rounded-3xl p-6 relative">
           
           {/* Success Banner */}
           <div className={`absolute -top-16 left-0 right-0 bg-emerald-50 border border-emerald-200 text-emerald-800 p-4 rounded-2xl shadow-md transition-all duration-300 flex items-center gap-3 ${status === 'success' ? 'opacity-100 translate-y-0 visible' : 'opacity-0 translate-y-4 invisible'}`}>
@@ -142,7 +142,7 @@ export default function ContactSection() {
                 required
                 disabled={status === 'loading'}
                 placeholder="Your full name"
-                className="bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-300 focus:border-slate-300 transition placeholder:text-slate-400 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-white/50 backdrop-blur-md border border-white/80 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white/85 focus:border-slate-400 transition placeholder:text-slate-400 disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </div>
             <div className="flex flex-col gap-1.5">
@@ -154,7 +154,7 @@ export default function ContactSection() {
                 required
                 disabled={status === 'loading'}
                 placeholder="you@example.com"
-                className="bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-300 focus:border-slate-300 transition placeholder:text-slate-400 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-white/50 backdrop-blur-md border border-white/80 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white/85 focus:border-slate-400 transition placeholder:text-slate-400 disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </div>
             <div className="flex flex-col gap-1.5">
@@ -166,7 +166,7 @@ export default function ContactSection() {
                 required
                 disabled={status === 'loading'}
                 placeholder="What's this about?"
-                className="bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-300 focus:border-slate-300 transition placeholder:text-slate-400 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-white/50 backdrop-blur-md border border-white/80 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white/85 focus:border-slate-400 transition placeholder:text-slate-400 disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </div>
             <div className="flex flex-col gap-1.5">
@@ -178,13 +178,13 @@ export default function ContactSection() {
                 required
                 disabled={status === 'loading'}
                 placeholder="Your message..."
-                className="bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-300 focus:border-slate-300 transition placeholder:text-slate-400 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-white/50 backdrop-blur-md border border-white/80 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white/85 focus:border-slate-400 transition placeholder:text-slate-400 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
               ></textarea>
             </div>
             <button
               type="submit"
               disabled={status === 'loading'}
-              className="mt-1 flex items-center justify-center gap-2 w-full bg-slate-900 hover:bg-slate-800 text-white font-medium py-2.5 rounded-xl shadow-sm transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+              className="mt-1 flex items-center justify-center gap-2 w-full bg-gradient-to-b from-slate-800/90 via-slate-900/90 to-slate-950 backdrop-blur-xl border border-white/20 border-t-white/50 shadow-md text-white font-medium py-3 rounded-2xl transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {status === 'loading' ? (
                 <>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import InteractiveBackground from "@/components/InteractiveBackground";
+import NeatBackground from "@/components/NeatBackground";
 import BackToTop from "@/components/BackToTop";
 import ScrollVignette from "@/components/ScrollVignette";
 
@@ -20,9 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-white text-slate-900 min-h-screen antialiased`}>
+      <body className={`${inter.className} bg-[#EBF4FE] text-slate-800 min-h-screen antialiased`}>
         <ScrollVignette />
-        <InteractiveBackground />
+        <NeatBackground />
         <Navbar />
         {children}
         <BackToTop />

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { Briefcase, GraduationCap, Trophy, MapPin, Calendar } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -27,7 +28,7 @@ export default function ExperienceSection() {
 
       {/* Sub-tabs */}
       <div className="flex mb-10">
-        <div className="liquid-glass-card p-1 rounded-xl inline-flex gap-1">
+        <div className="inline-flex items-center gap-1 p-1.5 rounded-full bg-white/50 backdrop-blur-2xl border border-white/80 shadow-[0_4px_20px_rgba(15,23,42,0.05),inset_0_1.5px_2px_rgba(255,255,255,0.9)]">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
@@ -35,14 +36,21 @@ export default function ExperienceSection() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                  isActive
-                    ? "liquid-btn-light shadow-sm"
-                    : "text-slate-600 hover:text-slate-900 hover:bg-white/40"
+                className={`relative flex items-center gap-1.5 px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-colors ${
+                  isActive ? "text-slate-900" : "text-slate-600 hover:text-slate-900"
                 }`}
               >
-                <Icon size={15} />
-                <span className="hidden sm:inline">{tab.label}</span>
+                {isActive && (
+                  <motion.div
+                    layoutId="experienceFilterPill"
+                    className="absolute inset-0 rounded-full bg-white shadow-sm border border-slate-200/60"
+                    transition={{ type: "spring", stiffness: 400, damping: 30, mass: 0.6 }}
+                  />
+                )}
+                <span className="relative z-10 flex items-center gap-1.5">
+                  <Icon size={15} />
+                  <span className="hidden sm:inline">{tab.label}</span>
+                </span>
               </button>
             );
           })}
@@ -93,7 +101,7 @@ export default function ExperienceSection() {
                 <p className="text-slate-700/90 text-sm leading-relaxed mb-4">{item.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {item.techStack.map((tech) => (
-                    <span key={tech} className="liquid-tag">
+                    <span key={tech} className="inline-flex items-center px-2.5 py-1 rounded-xl text-xs font-medium text-slate-700 bg-white/70 backdrop-blur-md border border-white/80">
                       {tech}
                     </span>
                   ))}

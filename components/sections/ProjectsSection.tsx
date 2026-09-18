@@ -1,10 +1,34 @@
 "use client";
 
 import { useState } from "react";
-import { FolderGit2, ExternalLink, Code, Star } from "lucide-react";
+import { motion } from "framer-motion";
+import { FolderGit2, ExternalLink, Code, Star, Database, BarChart3, LineChart, BrainCircuit, Sparkles, Activity, Server, FileCode2, Cpu } from "lucide-react";
+import { SiPostgresql, SiMysql, SiPython, SiPandas, SiNumpy, SiR, SiJupyter } from "react-icons/si";
+import { IoLogoTableau } from "react-icons/io5";
+import { PiMicrosoftExcelLogo } from "react-icons/pi";
 import ScrollReveal from "@/components/ScrollReveal";
 import TiltCard from "@/components/ui/TiltCard";
 import { projects as projectsData } from "@/data/projects";
+
+const techIconMap: Record<string, { icon: any; color: string }> = {
+  "SQL": { icon: Database, color: "#64748b" },
+  "PostgreSQL": { icon: SiPostgresql, color: "#4169E1" },
+  "MySQL": { icon: SiMysql, color: "#00758F" },
+  "Power BI": { icon: BarChart3, color: "#F2C811" },
+  "Tableau": { icon: IoLogoTableau, color: "#E97627" },
+  "Looker Studio": { icon: LineChart, color: "#4285F4" },
+  "Excel": { icon: PiMicrosoftExcelLogo, color: "#217346" },
+  "Python": { icon: SiPython, color: "#3776AB" },
+  "Pandas": { icon: SiPandas, color: "#150458" },
+  "NumPy": { icon: SiNumpy, color: "#013243" },
+  "R": { icon: SiR, color: "#276DC3" },
+  "Jupyter": { icon: SiJupyter, color: "#F37626" },
+  "dbt": { icon: Cpu, color: "#FF694B" },
+  "Seaborn": { icon: BarChart3, color: "#444876" },
+  "DAX": { icon: FileCode2, color: "#F2C811" },
+  "SQL Server": { icon: Server, color: "#CC2927" },
+  "Metabase": { icon: BarChart3, color: "#509EE3" },
+};
 
 const categories = [
   { id: "all", label: "All Projects" },
@@ -32,20 +56,28 @@ export default function ProjectsSection() {
 
       {/* Filter tabs */}
       <div className="flex justify-start mb-10">
-        <div className="flex flex-wrap gap-2 justify-start">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setActiveFilter(cat.id)}
-              className={`px-4 py-2 rounded-full text-sm font-medium ${
-                activeFilter === cat.id
-                  ? "liquid-btn-dark shadow-sm"
-                  : "liquid-btn-light"
-              }`}
-            >
-              <span className="relative z-10">{cat.label}</span>
-            </button>
-          ))}
+        <div className="inline-flex items-center gap-1 p-1.5 rounded-full bg-white/50 backdrop-blur-2xl border border-white/80 shadow-xs flex-wrap">
+          {categories.map((cat) => {
+            const isActive = activeFilter === cat.id;
+            return (
+              <button
+                key={cat.id}
+                onClick={() => setActiveFilter(cat.id)}
+                className={`relative px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  isActive ? "text-slate-900" : "text-slate-600 hover:text-slate-900"
+                }`}
+              >
+                {isActive && (
+                  <motion.div
+                    layoutId="projectFilterPill"
+                    className="absolute inset-0 bg-white shadow-sm border border-slate-200/50 rounded-full"
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10">{cat.label}</span>
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -99,11 +131,22 @@ export default function ProjectsSection() {
                     ))}
                   </div>
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {project.techStack.map((tech) => (
-                      <span key={tech} className="liquid-tag">
-                        {tech}
-                      </span>
-                    ))}
+                    {project.techStack.map((tech) => {
+                      const techData = techIconMap[tech];
+                      const TechIcon = techData?.icon || Cpu;
+                      return (
+                        <span 
+                          key={tech} 
+                          className="group inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl text-xs font-semibold text-slate-800 bg-white/70 backdrop-blur-md border border-white/90 shadow-[0_2px_8px_rgba(15,23,42,0.05),inset_0_1px_1px_rgba(255,255,255,0.9)] hover:bg-white hover:-translate-y-0.5 transition-all duration-200"
+                        >
+                          <TechIcon 
+                            className="w-3 h-3 shrink-0 transition-transform duration-300 group-hover:scale-110" 
+                            style={{ color: techData?.color || "#64748b" }}
+                          />
+                          {tech}
+                        </span>
+                      );
+                    })}
                   </div>
                 </div>
 
@@ -122,7 +165,7 @@ export default function ProjectsSection() {
                   </a>
                   <a
                     href={project.demoLink}
-                    className="flex-1 flex items-center justify-center gap-2 liquid-btn-dark rounded-xl px-4 py-2 text-sm font-medium"
+                    className="flex-1 flex items-center justify-center gap-2 bg-slate-900/85 backdrop-blur-xl border border-white/20 border-t-white/40 shadow-sm text-white hover:bg-slate-900 rounded-2xl px-4 py-2 text-sm font-medium transition-colors"
                   >
                     <span className="relative z-10 flex items-center gap-2">
                       <ExternalLink size={15} /> Demo

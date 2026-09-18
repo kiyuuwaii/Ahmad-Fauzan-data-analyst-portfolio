@@ -41,7 +41,7 @@ export default function AboutSection() {
 
           {/* Right: Detail card */}
           <div className="lg:col-span-8 xl:col-span-8">
-            <div className="bg-white rounded-3xl border border-slate-200/80 p-8 sm:py-10 sm:px-12 lg:px-16 shadow-sm flex flex-col h-full">
+            <div className="liquid-glass-card rounded-3xl p-8 sm:py-10 sm:px-12 lg:px-16 flex flex-col h-full">
               <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">{profileData.aboutGreeting}</h3>
               <div className="text-slate-600 leading-relaxed space-y-4 mb-8">
                 {profileData.aboutText.map((paragraph, idx) => (
@@ -54,7 +54,7 @@ export default function AboutSection() {
                 {profileData.infoCards.map((item) => {
                   const Icon = iconMap[item.icon] || User;
                   return (
-                    <div key={item.label} className="flex items-start gap-4 bg-slate-50 border border-slate-100 p-4 rounded-2xl">
+                    <div key={item.label} className="flex items-start gap-4 bg-white/50 backdrop-blur-md border border-white/80 p-4 rounded-2xl">
                       <div className="bg-slate-900 text-white p-2.5 rounded-xl shrink-0">
                         <Icon size={18} />
                       </div>
