@@ -1,9 +1,10 @@
 import { Mail, MapPin, Phone, ArrowRight, Code, Briefcase, Camera } from "lucide-react";
 import Link from "next/link";
+import { profileData } from "@/data/profile";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="scroll-mt-24 mb-10 max-w-5xl mx-auto">
+    <section id="contact" className="scroll-mt-32 mb-32 max-w-5xl mx-auto">
       <div className="mb-12 text-center md:text-left">
         <h2 className="text-3xl font-bold text-zinc-100 tracking-tight mb-3">Get In Touch</h2>
         <p className="text-zinc-400 max-w-2xl mx-auto md:mx-0">
@@ -21,8 +22,8 @@ export default function ContactSection() {
               </div>
               <div>
                 <h3 className="text-sm font-semibold text-zinc-400 mb-1">Email</h3>
-                <a href="mailto:hello@example.com" className="text-zinc-100 font-medium hover:text-emerald-400 transition-colors">
-                  hello@example.com
+                <a href={`mailto:${profileData.contact.email}`} className="text-zinc-100 font-medium hover:text-emerald-400 transition-colors">
+                  {profileData.contact.email}
                 </a>
               </div>
             </div>
@@ -33,8 +34,8 @@ export default function ContactSection() {
               </div>
               <div>
                 <h3 className="text-sm font-semibold text-zinc-400 mb-1">WhatsApp</h3>
-                <a href="tel:+6281234567890" className="text-zinc-100 font-medium hover:text-emerald-400 transition-colors">
-                  +62 812 3456 7890
+                <a href={`tel:${profileData.contact.phone}`} className="text-zinc-100 font-medium hover:text-emerald-400 transition-colors">
+                  {profileData.contact.phone}
                 </a>
               </div>
             </div>
@@ -46,7 +47,7 @@ export default function ContactSection() {
               <div>
                 <h3 className="text-sm font-semibold text-zinc-400 mb-1">Location</h3>
                 <p className="text-zinc-100 font-medium">
-                  Surabaya, Indonesia
+                  {profileData.contact.location}
                 </p>
               </div>
             </div>

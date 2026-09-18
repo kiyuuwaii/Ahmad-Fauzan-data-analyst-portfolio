@@ -3,7 +3,7 @@ import { projects } from "@/data/projects";
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="scroll-mt-24 mb-24">
+    <section id="projects" className="scroll-mt-32 mb-32">
       <div className="mb-10">
         <h2 className="text-3xl font-bold text-zinc-100 tracking-tight mb-3">Project Showcase</h2>
         <p className="text-zinc-400 max-w-2xl">

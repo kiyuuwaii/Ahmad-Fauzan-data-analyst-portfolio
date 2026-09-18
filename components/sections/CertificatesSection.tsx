@@ -3,7 +3,7 @@ import { certificates } from "@/data/certificates";
 
 export default function CertificatesSection() {
   return (
-    <section id="certificate" className="scroll-mt-24 mb-24">
+    <section id="certificates" className="scroll-mt-32 mb-32">
       <div className="mb-10 text-center">
         <h2 className="text-3xl font-bold text-zinc-100 tracking-tight mb-3">Certifications</h2>
         <p className="text-zinc-400 max-w-2xl mx-auto">
