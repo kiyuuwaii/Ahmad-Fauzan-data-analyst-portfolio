@@ -7,7 +7,7 @@ import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <main className="max-w-5xl mx-auto px-4 sm:px-6 pb-24 space-y-28">
+    <main className="max-w-6xl xl:max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-32 pb-24 space-y-36">
       <HeroSection />
       <AboutSection />
       <ExperienceSection />

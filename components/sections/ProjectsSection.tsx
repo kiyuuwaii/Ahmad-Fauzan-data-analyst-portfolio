@@ -85,17 +85,18 @@ export default function ProjectsSection() {
     : projectsData.filter((p) => p.category === activeFilter);
 
   return (
-    <section id="projects" className="scroll-mt-28">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">Projects</h2>
-        <p className="text-slate-500 max-w-2xl mx-auto">
+    <section id="projects" className="scroll-mt-36">
+      <div className="mb-10">
+        <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">// PORTFOLIO</span>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-3">Projects</h2>
+        <p className="text-slate-600 max-w-2xl">
           A showcase of my data analytics dashboards, SQL models, and business intelligence projects.
         </p>
       </div>
 
       {/* Filter tabs */}
-      <div className="flex justify-center mb-10">
-        <div className="flex flex-wrap gap-2 justify-center">
+      <div className="flex justify-start mb-10">
+        <div className="flex flex-wrap gap-2 justify-start">
           {categories.map((cat) => (
             <button
               key={cat.id}
@@ -113,7 +114,7 @@ export default function ProjectsSection() {
       </div>
 
       {/* Project cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filtered.map((project) => (
           <div key={project.id} className="bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow p-6 flex flex-col">
             {/* Header */}

@@ -2,15 +2,16 @@ import { Mail, MapPin, Phone, ArrowRight, Briefcase, Code, Camera } from "lucide
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="scroll-mt-28">
-      <div className="text-center mb-14">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">Let&apos;s Connect</h2>
-        <p className="text-slate-500 max-w-xl mx-auto">
+    <section id="contact" className="scroll-mt-36">
+      <div className="mb-14">
+        <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">// GET IN TOUCH</span>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-3">Let&apos;s Connect</h2>
+        <p className="text-slate-600 max-w-2xl">
           Have a data project in mind or want to discuss potential collaboration? Reach out directly.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full">
         {/* Left: Contact info */}
         <div className="flex flex-col gap-6">
           <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 flex flex-col gap-5">

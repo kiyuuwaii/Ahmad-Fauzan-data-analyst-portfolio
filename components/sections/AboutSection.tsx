@@ -19,20 +19,21 @@ const interests = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="scroll-mt-28 bg-slate-50/50 -mx-4 sm:-mx-6 px-4 sm:px-6 py-20 rounded-3xl">
-      <div className="max-w-5xl mx-auto">
-        {/* Section header */}
-        <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">About Me</h2>
-          <p className="text-slate-500 max-w-xl mx-auto">
+    <section id="about" className="scroll-mt-28 bg-slate-50/60 -mx-6 sm:-mx-10 lg:-mx-16 px-6 sm:px-10 lg:px-16 py-20 rounded-3xl">
+      <div className="max-w-6xl xl:max-w-7xl mx-auto">
+        {/* Section header - left aligned */}
+        <div className="mb-14">
+          <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">// ABOUT ME</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-3">Hello There!</h2>
+          <p className="text-slate-600 max-w-2xl">
             Passionate about turning raw data into strategic business solutions.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left: Photo */}
           <div className="lg:col-span-5">
-            <div className="relative aspect-[4/5] w-full max-w-sm mx-auto rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-100">
+            <div className="relative aspect-[4/5] w-full rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-100">
               <Image
                 src="/Foto-Formal-2-Croped.jpeg"
                 alt="Ahmad Fauzan Ash Shidiq"
@@ -44,7 +45,7 @@ export default function AboutSection() {
 
           {/* Right: Detail card */}
           <div className="lg:col-span-7 flex flex-col gap-8">
-            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 sm:p-8">
+            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 sm:p-8 w-full">
               <h3 className="text-2xl font-bold text-slate-900 mb-3">Hello There!</h3>
               <p className="text-slate-600 leading-relaxed mb-6">
                 I am a Data Analyst with a strong foundation in statistics, database management, and visualization tools. My approach centers on understanding the business question first, then designing the right analytical framework to answer it with clarity and precision. I thrive on turning messy datasets into clean narratives that drive real decisions.
@@ -55,7 +56,7 @@ export default function AboutSection() {
                 {infoCards.map((card) => {
                   const Icon = card.icon;
                   return (
-                    <div key={card.label} className="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-100">
+                    <div key={card.label} className="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-100 w-full">
                       <div className="w-9 h-9 rounded-lg bg-white border border-slate-200 flex items-center justify-center flex-shrink-0 text-slate-600">
                         <Icon size={16} />
                       </div>

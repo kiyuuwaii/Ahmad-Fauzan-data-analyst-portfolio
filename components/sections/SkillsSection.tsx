@@ -25,11 +25,12 @@ const skillGroups = [
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="scroll-mt-28 bg-slate-50/50 -mx-4 sm:-mx-6 px-4 sm:px-6 py-20 rounded-3xl">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">Skills & Tools</h2>
-          <p className="text-slate-500 max-w-xl mx-auto">
+    <section id="skills" className="scroll-mt-36 bg-slate-50/50 -mx-4 sm:-mx-6 lg:-mx-16 px-4 sm:px-6 lg:px-16 py-20 rounded-3xl">
+      <div className="w-full">
+        <div className="mb-14">
+          <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">// TOOLKIT</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-3">Skills & Tools</h2>
+          <p className="text-slate-600 max-w-2xl">
             The technical toolkit I use to extract, analyze, and communicate data insights.
           </p>
         </div>

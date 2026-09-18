@@ -53,16 +53,17 @@ export default function ExperienceSection() {
   const [activeTab, setActiveTab] = useState("work");
 
   return (
-    <section id="experience" className="scroll-mt-28 max-w-4xl mx-auto">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">My Experience</h2>
-        <p className="text-slate-500 max-w-xl mx-auto">
+    <section id="experience" className="scroll-mt-36 w-full">
+      <div className="mb-10">
+        <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">// EXPERIENCE</span>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-3">My Experience</h2>
+        <p className="text-slate-600 max-w-2xl">
           A journey through my professional growth, education, and achievements.
         </p>
       </div>
 
       {/* Sub-tabs */}
-      <div className="flex justify-center mb-10">
+      <div className="flex justify-start mb-10">
         <div className="bg-slate-100 p-1 rounded-xl inline-flex gap-1">
           {tabs.map((tab) => {
             const Icon = tab.icon;
