@@ -19,3 +19,4 @@ export const educationData: Education[] = [
     logo: "UN"
   }
 ];
+

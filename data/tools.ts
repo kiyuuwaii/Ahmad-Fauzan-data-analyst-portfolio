@@ -4,3 +4,4 @@ export const toolsData = [
   { category: "Data Visualization", skills: ["Tableau", "Power BI", "Looker Studio"] },
   { category: "Soft Skills", skills: ["Problem Solving", "Leadership", "Communication"] }
 ];
+
