@@ -43,13 +43,13 @@ export type Education = EducationData;
 export const workExperiences: Experience[] = [
   {
     id: "work-1",
-    role: "Data Analyst Intern",
-    company: "PT Global Solusi Digital",
-    location: "Surabaya, Indonesia",
-    period: "Jan 2024 - Jun 2024",
+    role: "3D Artist",
+    company: "PT Imdisal Kreatif Indonesia (Hige Studio)",
+    location: "Bandung, Indonesia",
+    period: "Feb 2025 - Dec 2025",
     description: "Analyzed transactional records and operational workflows to streamline reporting efficiency. Built automated dashboard views for tracking category performance and collaborated with cross-functional teams to resolve data discrepancies in periodic audits.",
-    techStack: ["SQL", "Power BI", "Python", "Excel"],
-    logoInitial: "GS",
+    techStack: ["3D Modeling", "Power BI", "Python", "Excel"],
+    logoInitial: "/logo/logo_Hige.jpg",
     achievements: [
       "Developed modular SQL routines to extract, clean, and summarize multi-branch operational datasets.",
       "Designed and deployed interactive Power BI dashboards replacing manual spreadsheet reporting workflows.",
@@ -58,13 +58,43 @@ export const workExperiences: Experience[] = [
   },
   {
     id: "work-2",
-    role: "Junior Data & Systems Analyst",
-    company: "Inovasi Studio Digital",
-    location: "Surabaya, Indonesia",
-    period: "Jul 2023 - Dec 2023",
+    role: "3D Environment Artist",
+    company: "PT Unimaksima Lentera Nusantara",
+    location: "Bandung, Indonesia",
+    period: "Jan 2025 - Jul 2025",
     description: "Conducted exploratory analysis on user interaction logs, system telemetry, and behavioral flows. Translated stakeholder problem statements into structured query logic and automated monitoring views.",
     techStack: ["PostgreSQL", "Python", "Pandas", "Looker Studio"],
-    logoInitial: "IS",
+    logoInitial: "/logo/logo_LN.png",
+    achievements: [
+      "Performed exploratory data analysis with Python and Pandas to analyze user progression and retention curves.",
+      "Created automated Looker Studio tracking monitors for weekly team reviews and operational health checks.",
+      "Documented relational data dictionary and schema conventions for internal analytics pipelines."
+    ]
+  },
+  {
+    id: "work-3",
+    role: "Narrative Designer",
+    company: "Game for Educational and Cultural Heritage",
+    location: "Surabaya, Indonesia",
+    period: "Aug 2023 - Jul 2024",
+    description: "Conducted exploratory analysis on user interaction logs, system telemetry, and behavioral flows. Translated stakeholder problem statements into structured query logic and automated monitoring views.",
+    techStack: ["PostgreSQL", "Python", "Pandas", "Looker Studio"],
+    logoInitial: "/logo/logo_GECH.jpg",
+    achievements: [
+      "Performed exploratory data analysis with Python and Pandas to analyze user progression and retention curves.",
+      "Created automated Looker Studio tracking monitors for weekly team reviews and operational health checks.",
+      "Documented relational data dictionary and schema conventions for internal analytics pipelines."
+    ]
+  },
+  {
+    id: "work-4",
+    role: "Associate Researcher",
+    company: "Game for Educational and Cultural Heritage",
+    location: "Surabaya, Indonesia",
+    period: "Jan 2023 - Aug 2023",
+    description: "Conducted exploratory analysis on user interaction logs, system telemetry, and behavioral flows. Translated stakeholder problem statements into structured query logic and automated monitoring views.",
+    techStack: ["PostgreSQL", "Python", "Pandas", "Looker Studio"],
+    logoInitial: "/logo/logo_GECH.jpg",
     achievements: [
       "Performed exploratory data analysis with Python and Pandas to analyze user progression and retention curves.",
       "Created automated Looker Studio tracking monitors for weekly team reviews and operational health checks.",

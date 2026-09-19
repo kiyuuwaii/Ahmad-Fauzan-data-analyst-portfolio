@@ -58,21 +58,20 @@ export default function ExperienceSection() {
       </div>
 
       {/* Tab content */}
-      <div className="space-y-6">
+      <div className="space-y-2">
         {activeTab === "work" &&
           workExperiences.map((item, index) => (
             <ScrollReveal key={item.id} delay={index * 0.1}>
               <div className="liquid-glass-card rounded-2xl p-6 sm:p-8 hover:shadow-lg transition-shadow duration-300">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
                   <div className="flex items-start gap-3.5">
-                    {item.logo ? (
-                      <div className="w-12 h-12 rounded-xl bg-white/80 border border-slate-200/60 shadow-sm p-1.5 shrink-0 overflow-hidden flex items-center justify-center relative">
+                    {item.logo || (item.logoInitial && item.logoInitial.includes('/')) ? (
+                      <div className="w-12 h-12 rounded-xl bg-white border border-slate-200/60 shadow-sm overflow-hidden shrink-0 relative flex items-center justify-center">
                         <Image
-                          src={item.logo}
+                          src={item.logo || item.logoInitial!}
                           alt={item.company}
-                          width={44}
-                          height={44}
-                          className="w-full h-full object-contain"
+                          fill
+                          className="object-contain"
                         />
                       </div>
                     ) : item.logoInitial ? (
@@ -90,10 +89,10 @@ export default function ExperienceSection() {
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    <span className="liquid-tag inline-flex items-center gap-1.5 font-medium px-2.5 py-1 text-xs">
+                    <span className="liquid-glass-card rounded-xl font-medium px-2.5 py-1 text-xs inline-flex items-center gap-1.5 text-slate-700">
                       <MapPin size={12} /> {item.location}
                     </span>
-                    <span className="liquid-tag inline-flex items-center gap-1.5 font-medium px-2.5 py-1 text-xs">
+                    <span className="liquid-glass-card rounded-xl font-medium px-2.5 py-1 text-xs inline-flex items-center gap-1.5 text-slate-700">
                       <Calendar size={12} /> {item.period}
                     </span>
                   </div>
@@ -117,13 +116,12 @@ export default function ExperienceSection() {
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
                   <div className="flex items-start gap-3.5">
                     {item.logo ? (
-                      <div className="w-12 h-12 rounded-xl bg-white/80 border border-slate-200/60 shadow-sm p-1.5 shrink-0 overflow-hidden flex items-center justify-center relative">
+                      <div className="w-12 h-12 rounded-xl bg-white border border-slate-200/60 shadow-sm overflow-hidden shrink-0 relative flex items-center justify-center">
                         <Image
                           src={item.logo}
                           alt={item.institution}
-                          width={44}
-                          height={44}
-                          className="w-full h-full object-contain"
+                          fill
+                          className="object-contain"
                         />
                       </div>
                     ) : (
@@ -137,8 +135,8 @@ export default function ExperienceSection() {
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    <span className="liquid-tag">{item.period}</span>
-                    <span className="liquid-tag !bg-emerald-50/50 !text-emerald-700 !border-emerald-200">GPA: {item.gpa}</span>
+                    <span className="liquid-glass-card rounded-xl font-medium px-2.5 py-1 text-xs text-slate-700">{item.period}</span>
+                    <span className="liquid-glass-card rounded-xl font-medium px-2.5 py-1 text-xs !bg-emerald-50/60 !border-emerald-200/80 text-emerald-700">GPA: {item.gpa}</span>
                   </div>
                 </div>
                 <p className="text-slate-700/90 text-sm leading-relaxed mb-4">{item.description}</p>
@@ -146,7 +144,7 @@ export default function ExperienceSection() {
                   <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Coursework</p>
                   <div className="flex flex-wrap gap-2">
                     {item.coursework.map((course) => (
-                      <span key={course} className="liquid-tag">
+                      <span key={course} className="liquid-glass-card rounded-xl font-medium px-2.5 py-1 text-xs text-slate-700">
                         {course}
                       </span>
                     ))}
@@ -164,13 +162,12 @@ export default function ExperienceSection() {
                   <div>
                     <div className="flex items-start gap-3.5 mb-3">
                       {item.logo ? (
-                        <div className="w-11 h-11 rounded-xl bg-white/80 border border-slate-200/60 shadow-sm p-1.5 shrink-0 overflow-hidden flex items-center justify-center relative">
+                        <div className="w-11 h-11 rounded-xl bg-white border border-slate-200/60 shadow-sm overflow-hidden shrink-0 relative flex items-center justify-center">
                           <Image
                             src={item.logo}
                             alt={item.issuer}
-                            width={36}
-                            height={36}
-                            className="w-full h-full object-contain"
+                            fill
+                            className="object-contain"
                           />
                         </div>
                       ) : (
@@ -184,9 +181,9 @@ export default function ExperienceSection() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center justify-between text-xs text-slate-500 pt-3 border-t border-slate-200 mt-3">
-                    <span className="font-semibold">{item.date}</span>
-                    <span className="font-mono text-slate-400">{item.credentialId}</span>
+                  <div className="flex items-center justify-between pt-3 border-t border-slate-200 mt-3">
+                    <span className="liquid-glass-card rounded-xl font-medium px-2.5 py-1 text-xs text-slate-700">{item.date}</span>
+                    <span className="font-mono text-xs text-slate-400">{item.credentialId}</span>
                   </div>
                 </div>
               </ScrollReveal>

@@ -42,5 +42,13 @@ export const skillCategories: SkillCategory[] = [
       { name: "Data Storytelling", level: "Proficient" },
       { name: "Statistical Analysis", level: "Proficient" }
     ]
+  },
+  {
+    category: "3D Design",
+    skills: [
+      { name: "Blender", level: "Proficient" },
+      { name: "Unity", level: "Intermediate" },
+      { name: "3D Modeling", level: "Proficient" }
+    ]
   }
 ];

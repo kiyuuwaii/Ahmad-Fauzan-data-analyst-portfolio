@@ -8,18 +8,16 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
   return (
-    <main className="w-full overflow-x-hidden space-y-28 pt-32 pb-24">
-      <div className="max-w-6xl xl:max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+    <main className="w-full overflow-x-hidden pt-20 pb-20 sm:pt-24 sm:pb-24">
+      <div className="max-w-6xl xl:max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 space-y-20 sm:space-y-28">
         <ScrollReveal>
           <HeroSection />
         </ScrollReveal>
-      </div>
       
-      <ScrollReveal>
-        <AboutSection />
-      </ScrollReveal>
+        <ScrollReveal>
+          <AboutSection />
+        </ScrollReveal>
       
-      <div className="max-w-6xl xl:max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 space-y-28">
         <ScrollReveal>
           <ExperienceSection />
         </ScrollReveal>

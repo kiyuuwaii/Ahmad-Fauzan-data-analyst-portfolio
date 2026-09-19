@@ -37,7 +37,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section id="home" className="scroll-mt-36 pt-10 lg:pt-20 pb-16">
+    <section id="home" className="scroll-mt-36 pt-0 lg:pt-4">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         <div className="lg:col-span-7 flex flex-col items-start text-left">
           {/* Available badge */}

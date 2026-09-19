@@ -56,7 +56,7 @@ export default function ProjectsSection() {
 
       {/* Filter tabs */}
       <div className="flex justify-start mb-10">
-        <div className="inline-flex items-center gap-1 p-1.5 rounded-full bg-white/50 backdrop-blur-md sm:backdrop-blur-2xl border border-white/80 shadow-xs flex-wrap">
+        <div className="inline-flex items-center gap-1 p-1.5 rounded-2xl sm:rounded-full bg-white/50 backdrop-blur-md sm:backdrop-blur-2xl border border-white/80 shadow-xs flex-wrap">
           {categories.map((cat) => {
             const isActive = activeFilter === cat.id;
             return (
@@ -112,7 +112,7 @@ export default function ProjectsSection() {
                   <div className="flex items-center gap-2 flex-wrap mb-2">
                     <h3 className="text-lg font-bold text-slate-900">{project.title}</h3>
                     {project.featured && (
-                      <span className="liquid-tag !bg-amber-50/50 !text-amber-700 !border-amber-200 !px-2 !py-0.5 inline-flex items-center gap-1">
+                      <span className="liquid-glass-card rounded-md !bg-amber-50/60 !border-amber-200/80 text-amber-700 font-bold px-2 py-0.5 text-[10px] inline-flex items-center gap-1 uppercase tracking-wide">
                         <Star size={10} /> Featured
                       </span>
                     )}
@@ -137,7 +137,7 @@ export default function ProjectsSection() {
                       return (
                         <span 
                           key={tech} 
-                          className="group inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl text-xs font-semibold text-slate-800 bg-white/70 backdrop-blur-md border border-white/90 shadow-[0_2px_8px_rgba(15,23,42,0.05),inset_0_1px_1px_rgba(255,255,255,0.9)] hover:bg-white hover:-translate-y-0.5 transition-all duration-200"
+                          className="liquid-glass-card group inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl text-xs font-semibold text-slate-800 hover:-translate-y-0.5 transition-all duration-200"
                         >
                           <TechIcon 
                             className="w-3 h-3 shrink-0 transition-transform duration-300 group-hover:scale-110" 

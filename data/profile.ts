@@ -50,7 +50,7 @@ export const profileData: ProfileData = {
     { icon: "MapPin", label: "Location", value: "Surabaya, Indonesia" },
     { icon: "GraduationCap", label: "Education", value: "D4 Game Technology - PENS" },
     { icon: "Mail", label: "Email", value: "ahmadfauzan.ash.shidiq@gmail.com" },
-    { icon: "Phone", label: "Phone", value: "+62 813 XXXX XXXX" },
+    { icon: "Phone", label: "Phone", value: "+62 813 3197 9541" },
     { icon: "Briefcase", label: "Status", value: "Available for Work" }
   ],
   interests: [

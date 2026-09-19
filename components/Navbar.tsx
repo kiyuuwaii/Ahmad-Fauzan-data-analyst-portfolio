@@ -42,7 +42,7 @@ export default function Navbar() {
   return (
     <>
       {/* 1. DESKTOP NAVBAR (Horizontal Liquid Glass) */}
-      <nav className="hidden sm:flex fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 max-w-fit">
+      <nav className="hidden sm:flex fixed bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-50 max-w-fit">
         <div className="relative flex items-center flex-nowrap gap-1.5 justify-center whitespace-nowrap bg-white/45 backdrop-blur-2xl backdrop-saturate-180 border border-white/70 shadow-[0_12px_32px_rgba(15,23,42,0.08),inset_0_1.5px_2px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(0,0,0,0.04)] rounded-full p-1.5">
           {/* Top highlight */}
           <div className="pointer-events-none absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-80" />
