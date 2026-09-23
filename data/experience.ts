@@ -144,32 +144,27 @@ export const educationData: EducationData[] = [
 export const certifications: Certification[] = [
   {
     id: "cert-1",
-    title: "Data Analysis and Visualization Professional Certificate",
+    title: "Data Fundamentals",
     issuer: "IBM SkillsBuild",
-    date: "2024",
-    credentialId: "IBM-SB-DA-849201",
+    date: "Sep-2026",
+    credentialId: "PLAN-BC0FAEE8E439",
     logo: "/logo/logo_ibm.png"
   },
   {
     id: "cert-2",
-    title: "SQL for Data Science Bootcamp",
-    issuer: "Hacktiv8",
-    date: "2023",
-    credentialId: "HCK-SQL-554209"
+    title: "Deloitte Australia - Data Analytics Job Simulation",
+    issuer: "Deloitte",
+    date: "Sep-2026",
+    credentialId: "6ab3780a1d7be30e2f5aeaee",
+    logo: "/logo/deloitte-com-logo.png"
   },
   {
     id: "cert-3",
-    title: "Data Analyst Track: Data Modeling & Exploration",
-    issuer: "DQLab",
-    date: "2023",
-    credentialId: "DQLAB-DA-2023081"
-  },
-  {
-    id: "cert-4",
-    title: "Memulai Pemrograman dengan Python",
-    issuer: "Dicoding Indonesia",
-    date: "2022",
-    credentialId: "DCD-PY-771924"
+    title: "Getting Started with Data ",
+    issuer: "IBM SkillsBuild",
+    date: "Aug-2026",
+    credentialId: "PLAN-14F2691E3A32",
+    logo: "/logo/logo_ibm.png"
   }
 ];
 

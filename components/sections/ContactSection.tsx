@@ -71,9 +71,9 @@ export default function ContactSection() {
               <div className="w-10 h-10 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center flex-shrink-0 text-slate-600 transition-transform duration-300 group-hover:scale-110">
                 <Mail size={18} />
               </div>
-              <div>
+              <div className="min-w-0 flex-1">
                 <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-0.5">Email</p>
-                <span className="text-sm font-medium text-slate-800">
+                <span className="text-sm font-medium text-slate-800 break-all">
                   {profileData.contact.email}
                 </span>
               </div>

@@ -63,7 +63,7 @@ export const profileData: ProfileData = {
   ],
   contact: {
     email: "ahmadfauzan.ash.shidiq@gmail.com",
-    phone: "+62 813 XXXX XXXX",
+    phone: "+62 813 3197 9541",
     location: "Surabaya, Indonesia"
   },
   socials: {

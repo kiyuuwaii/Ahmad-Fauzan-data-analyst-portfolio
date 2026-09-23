@@ -57,9 +57,9 @@ export default function AboutSection() {
                     <div className="bg-slate-900 text-white p-2.5 rounded-xl shrink-0">
                       <Icon size={18} />
                     </div>
-                    <div>
-                      <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-0.5">{item.label}</p>
-                      <p className="text-sm font-bold text-slate-800">{item.value}</p>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5">{item.label}</p>
+                      <p className="text-sm font-bold text-slate-800 break-all">{item.value}</p>
                     </div>
                   </div>
                 );

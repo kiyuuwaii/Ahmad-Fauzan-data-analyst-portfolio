@@ -27,23 +27,23 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "retail-sales-dashboard",
-    title: "Multi-Store Retail Sales & Performance Dashboard",
-    description: "Interactive executive dashboard tracking revenue velocity, product category margins, and regional store performance. Replaced manual multi-branch reporting with automated KPI drilldowns.",
-    category: "bi-dashboards",
+    id: "deloitte-job-simulation-dashboard",
+    title: "Deloitte - Data Analytics Job Simulation",
+    description: "Completed a Deloitte job simulation involving data analysis and forensic technology.|Created a data dashboard using Tableau.| Used Excel to classify data and draw business conclusions",
+    category: "sql-analytics",
     featured: true,
     status: "Completed",
-    date: "2024",
+    date: "2026",
     metrics: [
-      { label: "Data Scope", value: "50K+ Multi-Branch Rows" },
-      { label: "Refresh Cadence", value: "Automated Daily Pipeline" },
-      { label: "Key Focus", value: "Revenue Drivers & Margin Health" }
+      { label: "Data Scope", value: "Forage Job Simulation Data" },
+      { label: "Refresh Cadence", value: "One Time Projects" },
+      { label: "Key Focus", value: "Answering Business Questions" }
     ],
-    techStack: ["Power BI", "DAX", "SQL Server", "Excel"],
+    techStack: ["Tableau", "Excel"],
     codeLink: "https://github.com",
     demoLink: "https://app.powerbi.com",
     thumbnail: "/placeholder-project.png",
-    stack: ["Power BI", "DAX", "SQL Server", "Excel"],
+    stack: ["Tableau", "Excel"],
     liveLink: "https://app.powerbi.com",
     caseStudyLink: "https://github.com"
   },
